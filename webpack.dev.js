@@ -20,6 +20,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [{ from: './src', to: './static' }],
     }),
+    // ? хот релоад
     new webpack.HotModuleReplacementPlugin(),
   ],
   module: {

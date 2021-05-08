@@ -192,7 +192,7 @@
         "affectsGlobalScope": true
       },
       "./src/App.tsx": {
-        "version": "07ad4f598537eb5670f751a8387f1138417820b3156a839026634c44c7a261c3",
+        "version": "daf05bbfc39785d7a33f86dc70bd7a297e3f887b3a4a9b3b0a76b9320fba7273",
         "signature": "e9743e60736bdcff29fafabd2e8f3b5d5f6456ab5461facd3af20d73c5a00def",
         "affectsGlobalScope": false
       },
@@ -202,8 +202,8 @@
         "affectsGlobalScope": false
       },
       "./src/index.tsx": {
-        "version": "5a171a469ab83985671117969da3fb7c29243b787d72bc000868fa6620b4e0c1",
-        "signature": "de065518f1d2e70bb2c22f7b4981a22ded39b3415c40036d9eb38cde16b30195",
+        "version": "69d3fca447b3095caf172cc07d25406f150108183c86d38607e65e97209387db",
+        "signature": "1d718b0153bdcd004326fa3ecd0bb1fd90857c3a585991c660faea15fb327776",
         "affectsGlobalScope": false
       },
       "./node_modules/@types/eslint/helpers.d.ts": {

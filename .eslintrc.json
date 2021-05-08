@@ -22,13 +22,13 @@
         "react-hooks"
     ],
     "rules": {
-        "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": ["error"],
         "semi": 0,
-        "no-unused-vars": "warn",
-        "space-before-function-paren": "off",
         "quotes": "off",
+        "no-unused-vars": "warn",
+        "no-use-before-define": "off",
+        "space-before-function-paren": "off",
         "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn"
+        "react-hooks/exhaustive-deps": "warn",
+        "@typescript-eslint/no-use-before-define": ["error"]
     }
 }
