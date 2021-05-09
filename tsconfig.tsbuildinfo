@@ -585,7 +585,7 @@
       },
       "inlineSourceMap": false,
       "declarationMap": false,
-      "pathsBasePath": "/home/denlay/vse/re/WebpackReactV2",
+      "pathsBasePath": "/home/denlay/vse/re/WebpackReactTemplate",
       "configFilePath": "./tsconfig.json"
     },
     "referencedMap": {

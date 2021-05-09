@@ -1,3 +1,4 @@
+
 {
     "env": {
         "browser": true,
@@ -23,7 +24,8 @@
     ],
     "rules": {
         "semi": 0,
-        "quotes": "off",
+        "quotes": ["warn", "single"],
+        "react/prop-types": "off",
         "no-unused-vars": "warn",
         "no-use-before-define": "off",
         "space-before-function-paren": "off",
