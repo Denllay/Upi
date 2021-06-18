@@ -1,30 +1,33 @@
-const webpack = require('webpack');
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   mode: 'development',
   devtool: 'eval-cheap-module-source-map',
-  // ? Дев сервер
+
+  // ? Dev server
   devServer: {
     contentBase: path.join(__dirname, './dist'),
     port: 8080,
     historyApiFallback: true,
-    hot: true,
   },
+
   plugins: [
+    // ? HTML
     new HtmlWebpackPlugin({
       template: path.join(__dirname, './public', 'index.html'),
     }),
-    // ? Копирование
+
+    // ? Copy
     new CopyPlugin({
       patterns: [{ from: './src', to: './static' }],
     }),
-    // ? хот релоад
-    new webpack.HotModuleReplacementPlugin(),
   ],
+
   module: {
     rules: [
+      // ? Css/Scss
       {
         test: /\.s?css$/,
         oneOf: [
@@ -33,7 +36,6 @@ module.exports = {
             use: [
               'style-loader',
               'css-loader',
-
               {
                 loader: 'sass-loader',
                 options: {
@@ -52,6 +54,7 @@ module.exports = {
       },
     ],
   },
+
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, './dist'),

@@ -161,11 +161,6 @@
         "signature": "506b80b9951c9381dc5f11897b31fca5e2a65731d96ddefa19687fbc26b23c6e",
         "affectsGlobalScope": true
       },
-      "./declaration.d.ts": {
-        "version": "8053572b32f529afdedd23f036b8598b9aaad30ce3640f126373c9de155a003b",
-        "signature": "8053572b32f529afdedd23f036b8598b9aaad30ce3640f126373c9de155a003b",
-        "affectsGlobalScope": false
-      },
       "./node_modules/@types/react/global.d.ts": {
         "version": "ecf78e637f710f340ec08d5d92b3f31b134a46a4fcf2e758690d8c46ce62cba6",
         "signature": "ecf78e637f710f340ec08d5d92b3f31b134a46a4fcf2e758690d8c46ce62cba6",
@@ -190,6 +185,11 @@
         "version": "881ea8e225320dd9b436999d82998e1d7699e512e0597f0015e5abd59d95974a",
         "signature": "881ea8e225320dd9b436999d82998e1d7699e512e0597f0015e5abd59d95974a",
         "affectsGlobalScope": true
+      },
+      "./declaration.d.ts": {
+        "version": "1db23af7ac6ac7e4e4e9ab20dde7b9df50a2ac15b1c7d5dc489c215950990b9a",
+        "signature": "1db23af7ac6ac7e4e4e9ab20dde7b9df50a2ac15b1c7d5dc489c215950990b9a",
+        "affectsGlobalScope": false
       },
       "./src/App.tsx": {
         "version": "daf05bbfc39785d7a33f86dc70bd7a297e3f887b3a4a9b3b0a76b9320fba7273",
@@ -585,10 +585,13 @@
       },
       "inlineSourceMap": false,
       "declarationMap": false,
-      "pathsBasePath": "/home/denlay/vse/re/WebpackReactTemplate",
+      "pathsBasePath": "/home/denlay/test/reactRTQ",
       "configFilePath": "./tsconfig.json"
     },
     "referencedMap": {
+      "./declaration.d.ts": [
+        "./node_modules/@types/react/index.d.ts"
+      ],
       "./node_modules/@types/eslint-scope/index.d.ts": [
         "./node_modules/@types/eslint/index.d.ts",
         "./node_modules/@types/estree/index.d.ts"
@@ -839,6 +842,9 @@
       ]
     },
     "exportedModulesMap": {
+      "./declaration.d.ts": [
+        "./node_modules/@types/react/index.d.ts"
+      ],
       "./node_modules/@types/eslint-scope/index.d.ts": [
         "./node_modules/@types/eslint/index.d.ts",
         "./node_modules/@types/estree/index.d.ts"

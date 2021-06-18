@@ -1,7 +1,8 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+
 module.exports = {
   module: {
     rules: [
@@ -14,30 +15,30 @@ module.exports = {
           },
         },
       },
-      // ? СВГ
+      // ? SVG
       {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
       },
-      // ? Тупескрипт
+      // ? TS
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
-      // ? Картинки
+      // ? IMG
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
         type: 'asset/resource',
       },
-      // ? Шрифты
+      // ? Fonts
       {
         test: /\.(woff(2)?|eot|ttf|otf)$/,
         type: 'asset/inline',
       },
-      // ? Сксс
     ],
   },
+
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
@@ -47,9 +48,11 @@ module.exports = {
   plugins: [
     // ? Очистка говна
     new CleanWebpackPlugin(),
+    // ? Eslint
     new ESLintPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
+    // ? Оптимизация
     new ForkTsCheckerWebpackPlugin({
       async: false,
     }),
