@@ -6,6 +6,7 @@ logs
 
 node_modules
 bower_components
+dist
 
 *.sublime*
 
@@ -13,12 +14,11 @@ psd
 thumb
 sketch
 
-
 .yarn/*
 !.yarn/releases
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
 !.yarn/cache
-
+yarn-error.log
 tsconfig.tsbuildinfo
