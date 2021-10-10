@@ -15,7 +15,10 @@
   "plugins": ["react"],
   "rules": {
     "no-use-before-define": "off",
+    "comma-dangle": "off",
+    "no-unused-vars": "warn",
     "semi": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "react/display-name": "off"
   }
 }
