@@ -26,20 +26,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform: rotate(2deg);
   }
 
   &_button {
     &_block {
       margin-top: 100px;
     }
-    width: 300px;
 
     & button {
       padding: 10px 60px;
-      color: #fff;
-      &:hover {
-        background: #fe7070 !important;
-      }
     }
   }
 }
@@ -58,17 +54,6 @@
     right: 0;
     z-index: 2;
     clip-path: polygon(0 0%, 0% 100%, 85% 100%);
-
-    &_shadow {
-      width: 105vw;
-      height: 16vh;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      box-shadow: 0px -14px 44px 2px rgba(0, 0, 0, 0.5);
-      transform: rotate(14deg);
-      z-index: 1;
-    }
   }
   &_2 {
     width: 70vw;
@@ -97,6 +82,7 @@
     margin: 2% 0px 0px 100px;
     transform: rotate(7deg);
     & h1 {
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       width: 40%;
     }
   }

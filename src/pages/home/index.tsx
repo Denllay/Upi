@@ -1,5 +1,6 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { Button } from '@shared/ui';
 import React from 'react';
 import styles from './styles.module.scss';
 import Logo from '@shared/assets/icons/logo.svg';
@@ -22,7 +23,6 @@ const Home = () => {
       </Box>
 
       <Box className={styles.block_1} />
-      <Box className={styles.block_1_shadow} />
       <Box className={styles.block_2}>
         <Box className={styles.top_block}>
           <Box className={styles.logo}>

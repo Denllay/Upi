@@ -38,19 +38,16 @@ const commonThemeSettings: ThemeOptions = {
     error: {
       main: '#FF0000',
     },
-  },
-};
 
-const componentThemeSetting: ThemeOptions = {
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          background: '#F69595',
-        },
-      },
+    action: {
+      hover: '#FE7070',
+    },
+
+    text: {
+      primary: '#FFFFFF',
+      secondary: '#000000',
     },
   },
 };
 
-export default createTheme(commonThemeSettings, componentThemeSetting);
+export default createTheme(commonThemeSettings);
