@@ -19,6 +19,8 @@
     "no-unused-vars": "warn",
     "semi": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "dot-notation": "warn",
+    "no-undef": "off"
   }
 }

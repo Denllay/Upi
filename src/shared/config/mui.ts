@@ -12,8 +12,16 @@ const commonThemeSettings: ThemeOptions = {
     },
 
     h2: {
+      fontFamily: 'Mansalva, cursive',
       fontWeight: 600,
       fontSize: 72,
+      color: '#ffffff',
+    },
+
+    h3: {
+      fontFamily: 'Mansalva, cursive',
+      fontWeight: 500,
+      fontSize: 60,
       color: '#ffffff',
     },
 
@@ -46,6 +54,18 @@ const commonThemeSettings: ThemeOptions = {
     text: {
       primary: '#FFFFFF',
       secondary: '#000000',
+    },
+  },
+  components: {
+    MuiButton: {
+      variants: [
+        {
+          props: { size: 'large' },
+          style: {
+            padding: '14px 60px',
+          },
+        },
+      ],
     },
   },
 };
