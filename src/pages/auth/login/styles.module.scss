@@ -1,0 +1,57 @@
+@import './assets/font.scss';
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  padding: 15px;
+  & svg {
+    & path {
+      fill: #f59595;
+    }
+  }
+}
+
+.bottom_text {
+  width: 50%;
+  text-align: center;
+  font-weight: 500 !important;
+  line-height: 0.9 !important;
+  transform: rotate(350deg);
+}
+
+.block {
+  &_1 {
+    width: 60vw;
+    &_content {
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+  &_2 {
+    background: #f59595;
+    height: 100vh;
+    width: 40vw;
+    padding: 2% 0 0 7%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 19% 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    &_top {
+      transform: rotate(-5.21deg);
+    }
+
+    &_bottom {
+      background: url('./assets/img/login_img.png') no-repeat center bottom;
+      background-size: contain;
+      width: 320px;
+      height: 60vh;
+    }
+  }
+}
