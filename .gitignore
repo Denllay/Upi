@@ -9,7 +9,7 @@ bower_components
 dist
 
 *.sublime*
-
+.env
 psd
 thumb
 sketch
