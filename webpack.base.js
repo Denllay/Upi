@@ -2,6 +2,7 @@ const path = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   module: {
@@ -52,6 +53,8 @@ module.exports = {
   },
 
   plugins: [
+    // ? Env
+    new Dotenv(),
     // ? Очистка
     new CleanWebpackPlugin(),
     // ? Eslint

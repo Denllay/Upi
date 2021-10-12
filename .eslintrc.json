@@ -21,6 +21,7 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/display-name": "off",
     "dot-notation": "warn",
-    "no-undef": "off"
+    "no-undef": "off",
+    "space-before-function-paren": "off"
   }
 }

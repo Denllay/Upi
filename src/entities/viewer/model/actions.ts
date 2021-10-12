@@ -1,24 +1,14 @@
-import { auth } from '@shared/config/firebase';
-import { onAuthStateChanged } from '@firebase/auth';
+import { CLIENT_CREDENTIAL } from '@shared/config';
+import { getLocalStorage } from '@shared/lib';
 import { UpdateUserDetails } from '.';
 
 export const initialViewer = (): AppThunk => (dispatch) => {
   try {
-    onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        const { photoURL, email } = user;
-        const token = await user.getIdToken();
-        console.log(user);
+    const token = getLocalStorage<string>(CLIENT_CREDENTIAL);
 
-        const payload = {
-          token,
-          photoURL,
-          email,
-        };
-
-        dispatch(UpdateUserDetails(payload));
-      }
-    });
+    if (token) {
+      dispatch(UpdateUserDetails(token));
+    }
   } catch (e) {
     console.log(e);
   }

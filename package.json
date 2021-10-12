@@ -30,6 +30,7 @@
     "@emotion/styled": "^11.3.0",
     "@mui/material": "^5.0.3",
     "@reduxjs/toolkit": "^1.6.2",
+    "axios": "^0.22.0",
     "bundle-loader": "^0.5.6",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "compose-function": "^3.0.3",
