@@ -14,5 +14,9 @@ export const Viewer = createSlice({
       state.token = payload;
       state.isAuth = true;
     },
+    ClearUserDetails: (state) => {
+      state.isAuth = false;
+      state.token = null;
+    },
   },
 });

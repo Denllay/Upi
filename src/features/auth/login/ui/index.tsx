@@ -11,7 +11,7 @@ export const Button = () => {
   };
 
   return (
-    <UIButton onClick={onLogin} size="large">
+    <UIButton onClick={onLogin} size="large" variant="contained">
       Login by Github
     </UIButton>
   );

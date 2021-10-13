@@ -31,8 +31,8 @@ const commonThemeSettings: ThemeOptions = {
     },
 
     button: {
-      fontWeight: 700,
-      fontSize: 24,
+      fontWeight: 300,
+      fontSize: 15,
     },
   },
 
@@ -63,6 +63,14 @@ const commonThemeSettings: ThemeOptions = {
           props: { size: 'large' },
           style: {
             padding: '14px 60px',
+          },
+        },
+        {
+          props: { variant: 'text' },
+          style: {
+            padding: 2,
+            justifyContent: 'flex-start',
+            borderRadius: '0 0 5px 5px',
           },
         },
       ],

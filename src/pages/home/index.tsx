@@ -17,7 +17,9 @@ const Home = () => {
 
         <Box className={styles.main_button_block}>
           <Link to="/login" className={styles.main_button}>
-            <Button size="large">Login now!</Button>
+            <Button variant="contained" size="large">
+              Login now!
+            </Button>
           </Link>
         </Box>
       </Box>
