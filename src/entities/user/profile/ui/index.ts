@@ -1,2 +1,3 @@
 export { About as AboutProfile } from './About';
-export { Overview } from './Overview';
+export { Overview as OverviewProfile } from './Overview';
+export { Repositories as RepositoriesProfile } from './Repositories';

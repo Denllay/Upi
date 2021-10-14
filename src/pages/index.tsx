@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import React, { lazy, useEffect } from 'react';
 import { useViewer } from '@entities/viewer/model';
 import { Redirect, Route, Switch } from 'react-router';
 
@@ -9,13 +9,15 @@ const User = lazy(() => import('./user'));
 
 export const Routing = () => {
   const { isAuth } = useViewer();
-
+  useEffect(() => {
+    console.log(isAuth);
+  }, [isAuth]);
   if (!isAuth) {
     return (
       <Switch>
         <Route exact path="/login" component={Login} />
         <Route exact path="/home" component={Home} />
-        <Route exact path="/404" component={NotFound} />
+        <Redirect to="/home" />
       </Switch>
     );
   }
@@ -24,7 +26,7 @@ export const Routing = () => {
     <Switch>
       <Route exact path="/user/:nick" component={User} />
       <Route exact path="/404" component={NotFound} />
-      <Redirect to="404" />
+      <Redirect to="/404" />
     </Switch>
   );
 };

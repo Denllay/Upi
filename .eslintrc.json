@@ -23,6 +23,8 @@
     "dot-notation": "warn",
     "no-undef": "off",
     "space-before-function-paren": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "indent": "off",
+    "node/no-callback-literal": "off"
   }
 }

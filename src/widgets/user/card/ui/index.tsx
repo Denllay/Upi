@@ -1,6 +1,6 @@
 import React, { SyntheticEvent, useState } from 'react';
 import styles from './styles.module.scss';
-import { AboutProfile, Overview } from '@entities/user/profile/ui';
+import { AboutProfile, OverviewProfile } from '@entities/user/profile/ui';
 import { Box } from '@mui/material';
 import { Tab, Tabs, TabPanel } from '@shared/ui';
 
@@ -23,7 +23,7 @@ export const UserCard = () => {
       </Box>
 
       <TabPanel value={tab} index={1}>
-        <Overview />
+        <OverviewProfile />
       </TabPanel>
 
       <TabPanel value={tab} index={2}>

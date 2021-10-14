@@ -17,7 +17,7 @@ const NotFound = () => {
         <Box mt={2}>
           <BackToProfile>
             <Button variant="contained" size="small">
-              Go Back
+              Go to Profile
             </Button>
           </BackToProfile>
         </Box>

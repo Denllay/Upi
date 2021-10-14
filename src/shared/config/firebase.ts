@@ -17,3 +17,6 @@ export const auth = getAuth(app);
 export const provider = new GithubAuthProvider();
 provider.addScope('repo');
 provider.addScope('user');
+provider.setCustomParameters({
+  allow_signup: 'true',
+});
