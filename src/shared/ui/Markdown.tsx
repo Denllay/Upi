@@ -4,7 +4,11 @@ import ReactMarkdown, { Components } from 'react-markdown';
 
 const markdownComponents: Components = {
   h3({ children }) {
-    return <Typography variant="h5">{children}</Typography>;
+    return (
+      <Typography sx={{ marginTop: 3 }} variant="h5">
+        {children}
+      </Typography>
+    );
   },
 
   p({ children }) {
@@ -25,5 +29,9 @@ const markdownComponents: Components = {
 };
 
 export const Markdown: React.FC = ({ children }) => {
-  return <ReactMarkdown components={markdownComponents}>{children as string}</ReactMarkdown>;
+  return (
+    <ReactMarkdown skipHtml components={markdownComponents}>
+      {children as string}
+    </ReactMarkdown>
+  );
 };

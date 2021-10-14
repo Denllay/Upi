@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Skeleton as MuiSkeleton, SkeletonProps, styled } from '@mui/material';
 
 interface Props {
@@ -13,9 +13,6 @@ export const StyledSkeleton = styled(MuiSkeleton)<SkeletonProps>(() => ({
 }));
 
 export const Skeleton: React.FC<Props & SkeletonProps> = ({ children, isActive, animation = 'wave', ...props }) => {
-  useEffect(() => {
-    console.log(isActive);
-  }, [isActive]);
   if (isActive) {
     return <StyledSkeleton animation={animation} {...props} />;
   }

@@ -12,11 +12,9 @@ export const AvatarButton: React.FC = ({ children }) => {
   const [open, setOpen] = useState(false);
   const avatarRef = useRef<HTMLDivElement>(null);
 
-  const { avatar_url: avatarUrl = '' } = data || {};
+  const { avatar_url: avatarUrl = '', login = '' } = data || {};
 
   const togglePopper = () => {
-    console.log('kek');
-
     setOpen((prev) => !prev);
   };
 
@@ -36,8 +34,10 @@ export const AvatarButton: React.FC = ({ children }) => {
         <Box className={styles.popper_content}>
           <Box className={styles.popper_item}>
             <AvatarIcon />
-            <Link to="/user">
-              <Typography variant="button">Profile</Typography>
+            <Link to={`/${login}`}>
+              <Typography onClick={togglePopper} variant="button">
+                Profile
+              </Typography>
             </Link>
           </Box>
 

@@ -3,10 +3,15 @@ import { Box, Typography } from '@mui/material';
 import { useGetUserDataQuery } from '@shared/api';
 import { UserAvatar, Skeleton } from '@shared/ui';
 import styles from './styles.module.scss';
+import { useParams } from 'react-router';
+
+interface Params {
+  nick: string;
+}
 
 export const About = () => {
-  const { data, isLoading } = useGetUserDataQuery();
-
+  const { nick } = useParams<Params>();
+  const { data, isLoading } = useGetUserDataQuery(nick);
   const { avatar_url: avatarUrl = '', login, followers, following } = data || {};
 
   return (

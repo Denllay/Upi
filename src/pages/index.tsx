@@ -14,15 +14,14 @@ export const Routing = () => {
       <Switch>
         <Route exact path="/login" component={Login} />
         <Route exact path="/home" component={Home} />
-        <Redirect to="login" />
       </Switch>
     );
   }
 
   return (
     <Switch>
-      <Route exact path="/user" component={User} />
-      <Redirect to="/user" />
+      <Route exact path="/:nick" component={User} />
+      <Redirect to="/" />
     </Switch>
   );
 };

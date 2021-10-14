@@ -14,9 +14,16 @@ export const githubApi = createApi({
       return headers;
     },
   }),
+
   endpoints: (builder) => ({
-    getUserData: builder.query<UserData, void>({
-      query: () => 'user',
+    getUserData: builder.query<UserData, string | void>({
+      query: (nick) => {
+        if (nick) {
+          return `users/${nick}`;
+        }
+
+        return 'user';
+      },
     }),
     getUserREADME: builder.query<Readme, string>({
       query: (login) => `repos/${login}/${login}/readme`,
