@@ -1,6 +1,8 @@
 import { List, ListItem, Typography } from '@mui/material';
 import React from 'react';
 import ReactMarkdown, { Components } from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 
 const markdownComponents: Components = {
   h3({ children }) {
@@ -30,7 +32,7 @@ const markdownComponents: Components = {
 
 export const Markdown: React.FC = ({ children }) => {
   return (
-    <ReactMarkdown skipHtml components={markdownComponents}>
+    <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={markdownComponents}>
       {children as string}
     </ReactMarkdown>
   );
