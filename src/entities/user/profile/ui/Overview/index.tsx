@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import { useGetUserDataQuery, useGetUserREADMEQuery } from '@shared/api';
+import { useGetUserREADMEQuery } from '@shared/api';
 import { MarkDownSkeleton, Markdown } from '@shared/ui';
 import { Base64Decode } from '../../lib';
 import styles from './styles.module.scss';

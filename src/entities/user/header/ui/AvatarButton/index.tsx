@@ -1,18 +1,18 @@
 import React, { useRef, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import { Popper } from '@shared/ui';
-import { Link } from 'react-router-dom';
 import { useGetUserDataQuery } from '@shared/api';
 import { UserAvatar } from '@shared/ui/UserAvatar';
 import styles from './styles.module.scss';
 import AvatarIcon from '../../assets/icons/avatar.svg';
+import { BackToProfile } from '@entities/viewer/ui';
 
 export const AvatarButton: React.FC = ({ children }) => {
   const { data, isLoading } = useGetUserDataQuery();
   const [open, setOpen] = useState(false);
   const avatarRef = useRef<HTMLDivElement>(null);
 
-  const { avatar_url: avatarUrl = '', login = '' } = data || {};
+  const { avatar_url: avatarUrl = '' } = data || {};
 
   const togglePopper = () => {
     setOpen((prev) => !prev);
@@ -34,11 +34,12 @@ export const AvatarButton: React.FC = ({ children }) => {
         <Box className={styles.popper_content}>
           <Box className={styles.popper_item}>
             <AvatarIcon />
-            <Link to={`/${login}`}>
+
+            <BackToProfile>
               <Typography onClick={togglePopper} variant="button">
                 Profile
               </Typography>
-            </Link>
+            </BackToProfile>
           </Box>
 
           {children}
