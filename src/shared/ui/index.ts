@@ -6,3 +6,4 @@ export { UserAvatar } from './UserAvatar';
 export { Tab, Tabs, TabPanel } from './Tabs';
 export { MarkDownSkeleton } from './MarkDownSkeleton';
 export { Markdown } from './Markdown';
+export { Loading } from './Loading';
