@@ -1,8 +1,8 @@
-import { AvatarButton } from '@entities/avatarButton/ui';
+import React from 'react';
+import { AvatarButton } from '@entities/user/header/ui';
 import { SignOut } from '@features/auth/signOut/ui';
 import { Search } from '@features/search/ui';
 import { Box } from '@mui/material';
-import React from 'react';
 import styles from './styles.module.scss';
 
 export const Header = () => {

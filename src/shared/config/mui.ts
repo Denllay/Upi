@@ -24,12 +24,15 @@ const commonThemeSettings: ThemeOptions = {
       fontSize: 60,
       color: '#ffffff',
     },
+    h5: {
+      fontWeight: 600,
+      fontSize: 36,
+    },
 
     subtitle1: {
       fontWeight: 300,
       fontSize: 18,
     },
-
     button: {
       fontWeight: 300,
       fontSize: 15,

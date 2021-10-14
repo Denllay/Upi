@@ -1,26 +1,35 @@
 import React, { useRef, useState } from 'react';
-import { Avatar, Box, Typography } from '@mui/material';
-import { Popper, Button } from '@shared/ui';
+import { Box, Typography } from '@mui/material';
+import { Popper } from '@shared/ui';
 import { Link } from 'react-router-dom';
-import AvatarIcon from '../assets/icons/avatar.svg';
+import { useGetUserDataQuery } from '@shared/api';
+import { UserAvatar } from '@shared/ui/UserAvatar';
 import styles from './styles.module.scss';
+import AvatarIcon from '../../assets/icons/avatar.svg';
 
 export const AvatarButton: React.FC = ({ children }) => {
+  const { data, isLoading } = useGetUserDataQuery();
   const [open, setOpen] = useState(false);
   const avatarRef = useRef<HTMLDivElement>(null);
 
+  const { avatar_url: avatarUrl = '' } = data || {};
+
   const togglePopper = () => {
+    console.log('kek');
+
     setOpen((prev) => !prev);
   };
 
   return (
     <Box>
-      <Avatar
+      <UserAvatar
         ref={avatarRef}
-        alt="Avatar"
         onClick={togglePopper}
         className={styles.avatar}
-        src="https://wallpaperaccess.com/full/334584.jpg"
+        isActive={isLoading}
+        avatar={avatarUrl}
+        width={44}
+        height={44}
       />
 
       <Popper open={open} anchorEl={avatarRef.current} placement="bottom-start">
