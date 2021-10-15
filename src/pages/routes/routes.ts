@@ -5,6 +5,7 @@ const NotFound = lazy(() => import('../notFound'));
 const Home = lazy(() => import('../home'));
 const Login = lazy(() => import('../auth/login'));
 const User = lazy(() => import('../user'));
+const Repository = lazy(() => import('../repository'));
 
 export const routesConfig: Route[] = [
   {
@@ -35,4 +36,6 @@ export const routesConfig: Route[] = [
     key: 'user',
     path: '/user/:nick',
   },
+
+  { Component: Repository, exact: true, isPrivate: true, key: 'repository', path: '/user/:nick/:repository' },
 ];

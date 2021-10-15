@@ -59,6 +59,7 @@ const commonThemeSettings: ThemeOptions = {
       secondary: '#000000',
     },
   },
+
   components: {
     MuiButton: {
       variants: [

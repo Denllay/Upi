@@ -15,3 +15,8 @@ export interface Repo {
     login: string;
   };
 }
+
+export interface GetRepo {
+  ownerName: string;
+  repoName: string;
+}
