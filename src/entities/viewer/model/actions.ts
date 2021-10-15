@@ -7,7 +7,9 @@ export const initialViewer = (): AppThunk => (dispatch) => {
     const token = getLocalStorage<string>(CLIENT_CREDENTIAL);
 
     if (token) {
-      dispatch(UpdateUserDetails(token));
+      dispatch(UpdateUserDetails({ token, isAuth: true }));
+    } else {
+      dispatch(UpdateUserDetails({ token: null, isAuth: false }));
     }
   } catch (e) {
     console.log(e);

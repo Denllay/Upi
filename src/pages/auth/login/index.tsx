@@ -18,8 +18,12 @@ const Login = () => {
       </Box>
       <Box className={styles.block_2}>
         <Box className={styles.block_2_top}>
-          <Typography variant="h1">Login</Typography>
-          <Typography variant="h3">welcome back!</Typography>
+          <Typography className={styles.text_main} variant="h1">
+            Login
+          </Typography>
+          <Typography className={styles.text_main} variant="h3">
+            welcome back!
+          </Typography>
         </Box>
 
         <Box className={styles.block_2_bottom}>

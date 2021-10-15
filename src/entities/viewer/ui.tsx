@@ -1,11 +1,9 @@
-import { useGetUserDataQuery } from '@shared/api';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useUserData } from '@shared/model';
 
 export const BackToProfile: React.FC = ({ children }) => {
-  const { data } = useGetUserDataQuery();
+  const { data } = useUserData();
 
-  const { login = '' } = data || {};
-
-  return <Link to={`/user/${login}`}>{children}</Link>;
+  return <Link to={`/user/${data.login}`}>{children}</Link>;
 };

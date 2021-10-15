@@ -1,22 +1,21 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ViewerInitialState } from './types';
+import { UpdateUserDetailsPayload, ViewerInitialState } from './types';
 
 const initialState: ViewerInitialState = {
-  isAuth: false,
+  isAuth: null,
   token: null,
+  login: null,
 };
 
 export const Viewer = createSlice({
   name: 'Viewer',
   initialState,
   reducers: {
-    UpdateUserDetails: (state, { payload }: PayloadAction<string>) => {
-      state.token = payload;
-      state.isAuth = true;
+    UpdateUserDetails: (state, { payload }: PayloadAction<UpdateUserDetailsPayload>) => {
+      return Object.assign(state, payload);
     },
-    ClearUserDetails: (state) => {
-      state.isAuth = false;
-      state.token = null;
+    SignOutUser: (state) => {
+      return Object.assign(state, { ...initialState, isAuth: false });
     },
   },
 });

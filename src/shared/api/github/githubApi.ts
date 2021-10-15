@@ -16,7 +16,7 @@ export const githubApi = createApi({
   }),
 
   endpoints: (builder) => ({
-    getUserData: builder.query<UserData, string | void>({
+    getUserData: builder.query<UserData, string | null | void>({
       query: (nick) => {
         if (nick) {
           return `users/${nick}`;

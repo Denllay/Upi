@@ -1,9 +1,9 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import { useGetUserDataQuery } from '@shared/api';
 import { UserAvatar, Skeleton } from '@shared/ui';
 import styles from './styles.module.scss';
 import { useHistory, useParams } from 'react-router';
+import { useUserData } from '@shared/model';
 
 interface Params {
   nick: string;
@@ -12,8 +12,9 @@ interface Params {
 export const About = () => {
   const history = useHistory();
   const { nick } = useParams<Params>();
-  const { data, isLoading, isError } = useGetUserDataQuery(nick);
-  const { avatar_url: avatarUrl = '', login, followers, following } = data || {};
+  const { data, isLoading, isError } = useUserData(nick);
+
+  const { avatarUrl, login, followers, following } = data;
 
   if (isError) {
     history.push('/404');
