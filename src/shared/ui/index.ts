@@ -7,3 +7,5 @@ export { Tab, Tabs, TabPanel } from './Tabs';
 export { MarkDownSkeleton } from './MarkDownSkeleton';
 export { Markdown } from './Markdown';
 export { Loading } from './Loading';
+export { Link } from './Link';
+export { RepositoriesSkeleton } from './RepositoriesSkeleton';

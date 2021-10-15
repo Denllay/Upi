@@ -1,1 +1,1 @@
-export { useGetUserDataQuery, useGetUserREADMEQuery, githubApi } from './github/githubApi';
+export { useGetUserDataQuery, useGetUserREADMEQuery, useGetAllUserReposQuery, githubApi } from './github/githubApi';

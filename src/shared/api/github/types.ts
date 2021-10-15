@@ -7,3 +7,11 @@ export interface UserData {
 export interface Readme {
   content: string;
 }
+
+export interface Repo {
+  name: string;
+  description: string | null;
+  owner: {
+    login: string;
+  };
+}
