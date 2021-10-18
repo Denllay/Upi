@@ -1,13 +1,15 @@
-import { List, ListItem, Typography } from '@mui/material';
 import React from 'react';
+import { List, ListItem, styled, Typography as MuiTypography, TypographyProps } from '@mui/material';
 import ReactMarkdown, { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import '@shared/assets/fonts/rubik.scss';
+import styles from './styles.module.scss';
 
 const markdownComponents: Components = {
   h3({ children }) {
     return (
-      <Typography sx={{ marginTop: 3 }} variant="h5">
+      <Typography sx={{ marginTop: 3, fontWeight: 400 }} variant="h5">
         {children}
       </Typography>
     );
@@ -23,7 +25,7 @@ const markdownComponents: Components = {
 
   li({ children }) {
     return (
-      <ListItem>
+      <ListItem className={styles.li}>
         <Typography variant="subtitle1">{children}</Typography>
       </ListItem>
     );
@@ -37,3 +39,7 @@ export const Markdown: React.FC = ({ children }) => {
     </ReactMarkdown>
   );
 };
+
+const Typography = styled(MuiTypography)<TypographyProps>(({ theme }) => ({
+  fontFamily: 'Rubik, sans-serif',
+}));

@@ -17,7 +17,7 @@ export const Tabs = styled((props: StyledTabsProps) => (
   },
   '& .MuiTabs-indicatorSpan': {
     width: '100%',
-    backgroundColor: '#000000',
+    backgroundColor: 'var(--color-primary)',
   },
 });
 
@@ -32,7 +32,7 @@ export const Tab = styled((props: StyledTabProps) => <MuiTab disableRipple {...p
   fontSize: 24,
   marginRight: theme.spacing(3),
   marginLeft: theme.spacing(3),
-  color: '#000000',
+  color: 'var(--color-dark)',
 
   '&.Mui-focusVisible': {
     backgroundColor: 'rgba(100, 95, 228, 0.32)',

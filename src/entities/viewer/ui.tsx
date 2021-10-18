@@ -10,7 +10,7 @@ export const BackToProfile: React.FC<Props> = ({ className, children }) => {
   const { data } = useUserData();
 
   return (
-    <Link to={`/user/${data.login}`} className={className}>
+    <Link to={`/${data.login}`} className={className}>
       {children}
     </Link>
   );

@@ -35,7 +35,7 @@ interface Props {
 export const Repository: React.FC<Props> = ({ repoName, desc, ownerName }) => {
   return (
     <Box className={styles.repository}>
-      <Link to={`/user/${ownerName}/${repoName}`}>
+      <Link to={`/${ownerName}/${repoName}`}>
         <Typography className={styles.link} variant="h5">
           {repoName}
         </Typography>

@@ -1,0 +1,10 @@
+.li {
+  &::before {
+    margin-right: 10px;
+    content: '';
+    height: 5px;
+    width: 5px;
+    background: var(--color-dark);
+    border-radius: 100%;
+  }
+}

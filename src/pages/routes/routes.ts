@@ -34,8 +34,8 @@ export const routesConfig: Route[] = [
     exact: true,
     isPrivate: true,
     key: 'user',
-    path: '/user/:nick',
+    path: '/:nick',
   },
 
-  { Component: Repository, exact: true, isPrivate: true, key: 'repository', path: '/user/:nick/:repository' },
+  { Component: Repository, exact: true, isPrivate: true, key: 'repository', path: '/:nick/:repository' },
 ];

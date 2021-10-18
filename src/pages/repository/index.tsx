@@ -1,6 +1,5 @@
-import { useGetUserRepoQuery } from '@shared/api';
+import { Box } from '@mui/material';
 import React from 'react';
-import { useParams } from 'react-router';
 
 interface Param {
   nick: string;
@@ -8,10 +7,7 @@ interface Param {
 }
 
 const Repository = () => {
-  const { nick, repository } = useParams<Param>();
-  const { data } = useGetUserRepoQuery({ repoName: repository, ownerName: nick });
-
-  return <div>{data?.name}</div>;
+  return <Box></Box>;
 };
 
 export default Repository;
