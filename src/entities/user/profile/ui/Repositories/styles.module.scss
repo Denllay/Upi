@@ -3,11 +3,34 @@
 }
 
 .repository {
-  border-bottom: 3px solid #f59595;
+  border-bottom: 3px solid var(--color-primary);
   padding-bottom: 60px;
   margin-top: 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .subtitle {
-  color: #6e4343;
+  color: var(--color-secondary);
+}
+.link {
+  color: #000;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2px;
+    width: 100%;
+    display: none;
+    background: var(--color-primary);
+  }
+  &:hover {
+    &::before {
+      display: block;
+    }
+  }
 }

@@ -8,7 +8,7 @@
   padding: 15px;
   & svg {
     & path {
-      fill: #f59595;
+      fill: var(--color-primary);
     }
   }
 }
@@ -37,7 +37,7 @@
     }
   }
   &_2 {
-    background: #f59595;
+    background: var(--color-primary);
     height: 100vh;
     width: 40vw;
     padding: 2% 0 0 7%;

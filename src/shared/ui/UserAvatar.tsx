@@ -5,7 +5,7 @@ import { Skeleton } from '@shared/ui';
 interface Props {
   isActive: boolean;
   avatar: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   width?: 'string' | number;
   height?: 'string' | number;
 }

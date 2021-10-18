@@ -1,7 +1,7 @@
 export {
   useGetUserDataQuery,
-  useGetUserREADMEQuery,
+  useGetRepoREADMEQuery,
   useGetAllUserReposQuery,
   useGetUserRepoQuery,
   githubApi,
-} from './github/githubApi';
+} from './github';

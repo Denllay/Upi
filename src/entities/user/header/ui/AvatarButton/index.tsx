@@ -1,11 +1,9 @@
-import React, { useRef, useState } from 'react';
-import { Box, Typography } from '@mui/material';
+import React, { useEffect, useRef, useState } from 'react';
+import { Box } from '@mui/material';
 import { Popper } from '@shared/ui';
 import { UserAvatar } from '@shared/ui/UserAvatar';
-import styles from './styles.module.scss';
-import AvatarIcon from '../../assets/icons/avatar.svg';
-import { BackToProfile } from '@entities/viewer/ui';
 import { useUserData } from '@shared/model';
+import styles from './styles.module.scss';
 
 export const AvatarButton: React.FC = ({ children }) => {
   const { data, isLoading } = useUserData();
@@ -14,9 +12,19 @@ export const AvatarButton: React.FC = ({ children }) => {
 
   const { avatarUrl } = data;
 
-  const togglePopper = () => {
+  const togglePopper = (e: React.MouseEvent<HTMLElement>) => {
+    e.stopPropagation();
     setOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    const closePopper = () => setOpen(false);
+    window.addEventListener('click', closePopper);
+
+    return () => {
+      window.removeEventListener('click', closePopper);
+    };
+  }, []);
 
   return (
     <Box>
@@ -31,19 +39,7 @@ export const AvatarButton: React.FC = ({ children }) => {
       />
 
       <Popper open={open} anchorEl={avatarRef.current} placement="bottom-start">
-        <Box className={styles.popper_content}>
-          <Box className={styles.popper_item}>
-            <AvatarIcon />
-
-            <BackToProfile>
-              <Typography onClick={togglePopper} variant="button">
-                Profile
-              </Typography>
-            </BackToProfile>
-          </Box>
-
-          {children}
-        </Box>
+        <Box className={styles.popper_content}>{children}</Box>
       </Popper>
     </Box>
   );

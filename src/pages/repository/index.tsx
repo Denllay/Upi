@@ -10,7 +10,6 @@ interface Param {
 const Repository = () => {
   const { nick, repository } = useParams<Param>();
   const { data } = useGetUserRepoQuery({ repoName: repository, ownerName: nick });
-  console.log(data);
 
   return <div>{data?.name}</div>;
 };

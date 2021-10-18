@@ -20,3 +20,5 @@ export interface GetRepo {
   ownerName: string;
   repoName: string;
 }
+
+export interface GetREADMERepo extends GetRepo {}

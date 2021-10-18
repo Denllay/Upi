@@ -7,7 +7,7 @@ import { Tab, Tabs, TabPanel } from '@shared/ui';
 export const UserCard = () => {
   const [tab, setTab] = useState(1);
 
-  const changeTab = (e: SyntheticEvent, value: number) => {
+  const changeTab = (_: SyntheticEvent, value: number) => {
     setTab(value);
   };
 

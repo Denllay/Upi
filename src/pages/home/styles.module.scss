@@ -18,7 +18,7 @@
       color: #000;
     }
     &_subtitle {
-      color: #f59595;
+      color: var(--color-primary);
     }
   }
 
@@ -44,7 +44,7 @@
   &_1 {
     width: 100vw;
     height: 40vh;
-    background: #6e4343;
+    background: var(--color-secondary);
     position: absolute;
     bottom: 0;
     right: 0;
@@ -54,7 +54,7 @@
   &_2 {
     width: 70vw;
     height: 80vh;
-    background: #f59595;
+    background: var(--color-primary);
     position: absolute;
     top: 0;
     left: 0;

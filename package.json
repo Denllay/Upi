@@ -1,6 +1,6 @@
 {
   "name": "upi",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "index.js",
   "author": "Denllay <denllaay@gmail.com>",
   "scripts": {

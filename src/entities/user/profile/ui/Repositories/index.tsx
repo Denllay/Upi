@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { useGetAllUserReposQuery } from '@shared/api';
 import { useParams } from 'react-router';
-import { RepositoriesSkeleton, Link as UILink } from '@shared/ui';
+import { RepositoriesSkeleton } from '@shared/ui';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 interface Params {
@@ -36,11 +36,9 @@ export const Repository: React.FC<Props> = ({ repoName, desc, ownerName }) => {
   return (
     <Box className={styles.repository}>
       <Link to={`/user/${ownerName}/${repoName}`}>
-        <UILink sx={{ fontWeight: 500 }}>
-          <Typography variant="h5" sx={{ color: '#000000' }}>
-            {repoName}
-          </Typography>
-        </UILink>
+        <Typography className={styles.link} variant="h5">
+          {repoName}
+        </Typography>
       </Link>
 
       <Typography className={styles.subtitle}>{desc}</Typography>

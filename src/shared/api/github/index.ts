@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { GetRepo, Readme, Repo, UserData } from './types';
+import { GetREADMERepo, GetRepo, Readme, Repo, UserData } from './types';
 
 export const githubApi = createApi({
   reducerPath: 'githubApi',
@@ -36,10 +36,10 @@ export const githubApi = createApi({
       query: ({ ownerName, repoName }) => `repos/${ownerName}/${repoName}`,
     }),
 
-    getUserREADME: builder.query<Readme, string>({
-      query: (login) => `repos/${login}/${login}/readme`,
+    getRepoREADME: builder.query<Readme, GetREADMERepo>({
+      query: ({ ownerName, repoName }) => `repos/${ownerName}/${repoName}/readme`,
     }),
   }),
 });
 
-export const { useGetUserDataQuery, useGetUserREADMEQuery, useGetAllUserReposQuery, useGetUserRepoQuery } = githubApi;
+export const { useGetUserDataQuery, useGetRepoREADMEQuery, useGetAllUserReposQuery, useGetUserRepoQuery } = githubApi;
