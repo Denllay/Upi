@@ -5,12 +5,12 @@ export const useREADMERepo = (ownerName: string, repoName: string = ownerName) =
   const data = useGetRepoREADMEQuery(
     { ownerName, repoName },
     {
-      selectFromResult: ({ data, ...rest }) => {
+      selectFromResult: ({ data, isLoading, isUninitialized, ...rest }) => {
         const { content = '' } = data || {};
 
         const README = Base64Decode(content);
 
-        return { data: README, ...rest };
+        return { data: README, isLoading: isLoading || isUninitialized, ...rest };
       },
     }
   );

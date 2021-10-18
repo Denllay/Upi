@@ -1,10 +1,9 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { MarkDownSkeleton, Markdown } from '@shared/ui';
-import styles from './styles.module.scss';
 import { useParams } from 'react-router';
 import { useREADMERepo } from '@shared/model';
-
+import styles from './styles.module.scss';
 interface Params {
   nick: string;
 }

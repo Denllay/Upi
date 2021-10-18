@@ -5,7 +5,7 @@ export const useUserData = (login?: string | null) => {
   const { login: initialLogin } = useTypedSelector((state) => state.viewer);
 
   const data = useGetUserDataQuery(login || initialLogin, {
-    selectFromResult: ({ data, ...rest }) => {
+    selectFromResult: ({ data, isLoading, isUninitialized, ...rest }) => {
       const { following = 0, followers = 0, login = '', avatar_url: avatarUrl = '' } = data || {};
 
       const formatedData = {
@@ -15,7 +15,7 @@ export const useUserData = (login?: string | null) => {
         avatarUrl,
       };
 
-      return { data: formatedData, ...rest };
+      return { data: formatedData, isLoading: isLoading || isUninitialized, ...rest };
     },
   });
 
