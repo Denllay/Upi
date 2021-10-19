@@ -3,8 +3,8 @@ import { List, ListItem, styled, Typography as MuiTypography, TypographyProps } 
 import ReactMarkdown, { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
-import '@shared/assets/fonts/rubik.scss';
 import styles from './styles.module.scss';
+import '@shared/assets/fonts/rubik.scss';
 
 const markdownComponents: Components = {
   h3({ children }) {
@@ -40,6 +40,6 @@ export const Markdown: React.FC = ({ children }) => {
   );
 };
 
-const Typography = styled(MuiTypography)<TypographyProps>(({ theme }) => ({
+const Typography = styled(MuiTypography)<TypographyProps>(() => ({
   fontFamily: 'Rubik, sans-serif',
 }));

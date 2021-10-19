@@ -1,3 +1,4 @@
+import { RouteParamsEnum } from '@shared/config/router';
 import { lazy } from 'react';
 import { Route } from './types';
 
@@ -34,8 +35,14 @@ export const routesConfig: Route[] = [
     exact: true,
     isPrivate: true,
     key: 'user',
-    path: '/:nick',
+    path: `/:${RouteParamsEnum.USERNAME}`,
   },
 
-  { Component: Repository, exact: true, isPrivate: true, key: 'repository', path: '/:nick/:repository' },
+  {
+    Component: Repository,
+    exact: false,
+    isPrivate: true,
+    key: 'repository',
+    path: `/:${RouteParamsEnum.USERNAME}/:${RouteParamsEnum.REPOSITORY}/:${RouteParamsEnum.BRANCH}(tree/.+)?`,
+  },
 ];

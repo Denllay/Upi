@@ -1,0 +1,17 @@
+.main {
+  display: flex;
+  align-items: center;
+}
+.text {
+  color: var(--color-dark);
+}
+.block_name {
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+}
+.line {
+  margin: 0 5px;
+  color: #c4c4c4;
+  font-weight: 200;
+}

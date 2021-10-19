@@ -1,16 +1,12 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { MarkDownSkeleton, Markdown } from '@shared/ui';
-import { useParams } from 'react-router';
-import { useREADMERepo } from '@shared/model';
+import { useREADMERepo, useTypedParams } from '@shared/model';
 import styles from './styles.module.scss';
-interface Params {
-  nick: string;
-}
 
 export const Overview = () => {
-  const { nick } = useParams<Params>();
-  const { data, isLoading } = useREADMERepo(nick);
+  const { username } = useTypedParams();
+  const { data, isLoading } = useREADMERepo(username);
 
   return (
     <Box className={styles.main}>

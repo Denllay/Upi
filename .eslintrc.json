@@ -25,6 +25,7 @@
     "space-before-function-paren": "off",
     "react/prop-types": "off",
     "indent": "off",
-    "node/no-callback-literal": "off"
+    "node/no-callback-literal": "off",
+    "no-useless-escape": "off"
   }
 }

@@ -2,17 +2,13 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { UserAvatar, Skeleton } from '@shared/ui';
 import styles from './styles.module.scss';
-import { useHistory, useParams } from 'react-router';
-import { useUserData } from '@shared/model';
-
-interface Params {
-  nick: string;
-}
+import { useHistory } from 'react-router';
+import { useTypedParams, useUserData } from '@shared/model';
 
 export const About = () => {
   const history = useHistory();
-  const { nick } = useParams<Params>();
-  const { data, isLoading, isError } = useUserData(nick);
+  const { username } = useTypedParams();
+  const { data, isLoading, isError } = useUserData(username);
 
   const { avatarUrl, login, followers, following } = data;
 

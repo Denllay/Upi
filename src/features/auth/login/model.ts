@@ -31,7 +31,7 @@ export const LoginUser =
         };
 
         dispatch(UpdateUserDetails(payload));
-        history.push(`user/${login}`);
+        history.push(`/${login}`);
       } else {
         Promise.reject(new Error('Insufficient data'));
       }

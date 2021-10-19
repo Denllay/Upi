@@ -2,6 +2,7 @@ export {
   useGetUserDataQuery,
   useGetRepoREADMEQuery,
   useGetAllUserReposQuery,
-  useGetUserRepoQuery,
+  useGetRepoQuery,
   githubApi,
+  useGetAllRepoBranchesQuery,
 } from './github';

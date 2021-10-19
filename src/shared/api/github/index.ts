@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { GetREADMERepo, GetRepo, Readme, Repo, UserData } from './types';
+import { Branch, GetREADMERepo, GetRepo, Readme, Repo, UserData } from './types';
 
 export const githubApi = createApi({
   reducerPath: 'githubApi',
@@ -19,9 +19,9 @@ export const githubApi = createApi({
 
   endpoints: (builder) => ({
     getUserData: builder.query<UserData, string | null | void>({
-      query: (login) => {
-        if (login) {
-          return `users/${login}`;
+      query: (username) => {
+        if (username) {
+          return `users/${username}`;
         }
 
         return 'user';
@@ -29,17 +29,25 @@ export const githubApi = createApi({
     }),
 
     getAllUserRepos: builder.query<Repo[], string>({
-      query: (login) => `users/${login}/repos`,
+      query: (username) => `users/${username}/repos`,
     }),
 
-    getUserRepo: builder.query<Repo, GetRepo>({
-      query: ({ ownerName, repoName }) => `repos/${ownerName}/${repoName}`,
+    getRepo: builder.query<Repo, GetRepo>({
+      query: ({ username, repository }) => `repos/${username}/${repository}`,
     }),
-
+    getAllRepoBranches: builder.query<Branch[], GetRepo>({
+      query: ({ username, repository }) => `repos/${username}/${repository}/branches`,
+    }),
     getRepoREADME: builder.query<Readme, GetREADMERepo>({
-      query: ({ ownerName, repoName }) => `repos/${ownerName}/${repoName}/readme`,
+      query: ({ username, repository }) => `repos/${username}/${repository}/readme`,
     }),
   }),
 });
 
-export const { useGetUserDataQuery, useGetRepoREADMEQuery, useGetAllUserReposQuery, useGetUserRepoQuery } = githubApi;
+export const {
+  useGetUserDataQuery,
+  useGetRepoREADMEQuery,
+  useGetAllUserReposQuery,
+  useGetRepoQuery,
+  useGetAllRepoBranchesQuery,
+} = githubApi;

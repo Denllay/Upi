@@ -15,22 +15,3 @@
 .subtitle {
   color: var(--color-secondary);
 }
-.link {
-  color: #000;
-  position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 2px;
-    width: 100%;
-    display: none;
-    background: var(--color-primary);
-  }
-  &:hover {
-    &::before {
-      display: block;
-    }
-  }
-}

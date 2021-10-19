@@ -11,14 +11,21 @@ export interface Readme {
 export interface Repo {
   name: string;
   description: string | null;
+  default_branch: string;
   owner: {
     login: string;
   };
 }
-
+export interface Branch {
+  commit: {
+    sha: string;
+    url: string;
+  };
+  name: string;
+}
 export interface GetRepo {
-  ownerName: string;
-  repoName: string;
+  username: string;
+  repository: string;
 }
 
 export interface GetREADMERepo extends GetRepo {}
