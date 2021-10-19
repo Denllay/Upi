@@ -43,6 +43,6 @@ export const routesConfig: Route[] = [
     exact: false,
     isPrivate: true,
     key: 'repository',
-    path: `/:${RouteParamsEnum.USERNAME}/:${RouteParamsEnum.REPOSITORY}/:${RouteParamsEnum.BRANCH}(tree/.+)?`,
+    path: `/:${RouteParamsEnum.USERNAME}/:${RouteParamsEnum.REPOSITORY}/:${RouteParamsEnum.BRANCH}(tree/[^/.]+)?/:${RouteParamsEnum.PATH}(.+)?`,
   },
 ];

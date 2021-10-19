@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  align-items: center;
+  color: var(--color-white);
+}
+.login {
+  margin: 0 5px;
+}
+.message {
+  font-size: 15px;
+}
+.skeleton {
+  background: var(--color-white);
+}

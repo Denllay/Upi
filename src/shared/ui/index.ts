@@ -1,11 +1,11 @@
 export { Button } from './Button';
 export { Field } from './Field';
 export { Popper } from './Popper';
-export { Skeleton } from './Skeleton';
+export { Skeleton } from './Skeletons/Skeleton';
 export { UserAvatar } from './UserAvatar';
 export { Tab, Tabs, TabPanel } from './Tabs';
-export { MarkDownSkeleton } from './MarkDownSkeleton';
+export { MarkDownSkeleton } from './Skeletons/';
 export { Markdown } from './Markdown';
 export { Loading } from './Loading';
 export { Link } from './Link';
-export { RepositoriesSkeleton } from './RepositoriesSkeleton';
+export { RepositoriesSkeleton } from './Skeletons/';

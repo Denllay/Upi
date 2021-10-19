@@ -33,6 +33,10 @@ const commonThemeSettings: ThemeOptions = {
       fontWeight: 300,
       fontSize: 18,
     },
+    subtitle2: {
+      fontWeight: 300,
+      fontSize: 14,
+    },
     button: {
       fontWeight: 300,
       fontSize: 15,

@@ -2,19 +2,13 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { UserAvatar, Skeleton } from '@shared/ui';
 import styles from './styles.module.scss';
-import { useHistory } from 'react-router';
 import { useTypedParams, useUserData } from '@shared/model';
 
 export const About = () => {
-  const history = useHistory();
   const { username } = useTypedParams();
-  const { data, isLoading, isError } = useUserData(username);
+  const { data, isLoading } = useUserData(username);
 
   const { avatarUrl, login, followers, following } = data;
-
-  if (isError) {
-    history.push('/404');
-  }
 
   return (
     <Box className={styles.main}>

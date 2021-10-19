@@ -6,7 +6,7 @@ interface Props {
   isActive: boolean;
 }
 
-export const MarkDownSkeleton: React.FC<Props> = ({ isActive, children }) => {
+export const MarkDown: React.FC<Props> = ({ isActive, children }) => {
   if (isActive) {
     return (
       <Box>

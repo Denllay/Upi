@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box } from '@mui/material';
 import { Header } from '@widgets/header/ui';
 import { UserCard } from '@widgets/user/card/ui';
 import styles from './styles.module.scss';
+import { useTypedParams, useUserData } from '@shared/model';
+import { useHistory } from 'react-router';
 
 const User = () => {
+  const history = useHistory();
+  const { username } = useTypedParams();
+  const { isError } = useUserData(username);
+
+  useEffect(() => {
+    if (isError) {
+      history.push('/404');
+    }
+  }, [isError]);
+
   return (
     <Box className={styles.main}>
       <Header />

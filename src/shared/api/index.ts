@@ -5,4 +5,7 @@ export {
   useGetRepoQuery,
   githubApi,
   useGetAllRepoBranchesQuery,
+  useGetLastCommitQuery,
+  useGetRepoContentsQuery,
+  useGetFileContentsQuery,
 } from './github';

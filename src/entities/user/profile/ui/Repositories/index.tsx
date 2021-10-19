@@ -9,14 +9,14 @@ export const Repositories = () => {
   const { username } = useTypedParams();
   const { data, isLoading } = useGetAllUserReposQuery(username);
 
-  const repos = data?.map(({ description, name, owner }) => {
+  const reposEl = data?.map(({ description, name, owner }) => {
     return <Repository key={name} desc={description} repoName={name} ownerName={owner.login} />;
   });
 
   return (
     <Box className={styles.main}>
       <RepositoriesSkeleton isActive={isLoading}>
-        {repos || <Typography variant="h5">Nothign here ¯\_(ツ)_/¯</Typography>}
+        {reposEl || <Typography variant="h5">Nothign here ¯\_(ツ)_/¯</Typography>}
       </RepositoriesSkeleton>
     </Box>
   );

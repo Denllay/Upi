@@ -9,15 +9,15 @@ import { Link } from 'react-router-dom';
 
 export const BranchButton = () => {
   const { anchorEl, isOpen, togglePopper } = usePopper<HTMLButtonElement>();
-
+  // ! TODO move useparams to hook usegetrepo
   const { repository, username, branch } = useTypedParams();
-  const { data: RepoData } = useGetRepoQuery({ repository, username });
+  const { data: repoData } = useGetRepoQuery({ repository, username });
   const { data: branchData, isLoading } = useGetAllRepoBranchesQuery({ repository, username });
 
-  const { default_branch: defaultBranch } = RepoData || {};
-  const branchName = branch ? branch.split('/')[1] : defaultBranch;
+  const { default_branch: defaultBranch } = repoData || {};
+  const branchName = branch || defaultBranch;
 
-  const branchEl = branchData?.map(({ name }) => {
+  const branchesEl = branchData?.map(({ name }) => {
     const isActive = branchName === name;
     const path = `/${username}/${repository}/tree/${name}`;
 
@@ -37,7 +37,7 @@ export const BranchButton = () => {
       </Button>
 
       <Popper open={isOpen} anchorEl={anchorEl.current} placement="bottom-start">
-        <Box className={styles.popper_content}>{branchEl}</Box>
+        <Box className={styles.popper_content}>{branchesEl}</Box>
       </Popper>
     </Skeleton>
   );

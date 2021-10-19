@@ -6,7 +6,7 @@ interface Props {
   isActive: boolean;
 }
 
-export const RepositoriesSkeleton: React.FC<Props> = ({ isActive, children }) => {
+export const Repositories: React.FC<Props> = ({ isActive, children }) => {
   if (isActive) {
     return (
       <Box>

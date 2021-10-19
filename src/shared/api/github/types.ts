@@ -18,14 +18,57 @@ export interface Repo {
 }
 export interface Branch {
   commit: {
+    author: AuthorBranch;
     sha: string;
     url: string;
+    commit: {
+      message: string;
+    };
+    committer: {
+      avatar_url: string;
+    };
   };
   name: string;
 }
+export interface LastCommit {
+  commit: {
+    message: string;
+  };
+  author: {
+    login: string;
+    avatar_url: string;
+  };
+}
+
+export interface RepoContents {
+  download_url: string;
+  name: string;
+  path: string;
+  sha: string;
+  size: string;
+  type: 'file' | 'dir';
+  url: string;
+}
+export interface RepoContentsParams {
+  ref?: string;
+}
+interface AuthorBranch {
+  avatar_url: string;
+  login: string;
+}
+
 export interface GetRepo {
   username: string;
   repository: string;
 }
+export interface GetBranch extends GetRepo {
+  branch: string;
+}
 
 export interface GetREADMERepo extends GetRepo {}
+
+export interface GetRepoContents extends GetRepo {
+  path?: string;
+  branch?: string;
+}
+export interface GetLastComment extends GetRepoContents {}

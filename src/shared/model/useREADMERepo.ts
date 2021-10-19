@@ -10,6 +10,7 @@ export const useREADMERepo = (username: string, repository: string = username) =
 
         const README = Base64Decode(content);
 
+        // ? @see isLoading - https://github.com/reduxjs/redux-toolkit/issues/1586
         return { data: README, isLoading: isLoading || isUninitialized, ...rest };
       },
     }

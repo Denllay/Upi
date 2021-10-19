@@ -1,0 +1,1 @@
+export { LastCommitInfo } from './LastCommitInfo';
