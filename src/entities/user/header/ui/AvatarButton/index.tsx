@@ -1,35 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { Box } from '@mui/material';
 import { Popper } from '@shared/ui';
 import { UserAvatar } from '@shared/ui/UserAvatar';
-import { useUserData } from '@shared/model';
+import { usePopper, useUserData } from '@shared/model';
 import styles from './styles.module.scss';
 
 export const AvatarButton: React.FC = ({ children }) => {
   const { data, isLoading } = useUserData();
-  const [open, setOpen] = useState(false);
-  const avatarRef = useRef<HTMLDivElement>(null);
+  const { togglePopper, isOpen, anchorEl } = usePopper<HTMLDivElement>();
 
   const { avatarUrl } = data;
-
-  const togglePopper = (e: React.MouseEvent<HTMLElement>) => {
-    e.stopPropagation();
-    setOpen((prev) => !prev);
-  };
-
-  useEffect(() => {
-    const closePopper = () => setOpen(false);
-    window.addEventListener('click', closePopper);
-
-    return () => {
-      window.removeEventListener('click', closePopper);
-    };
-  }, []);
 
   return (
     <Box>
       <UserAvatar
-        ref={avatarRef}
+        ref={anchorEl}
         onClick={togglePopper}
         className={styles.avatar}
         isActive={isLoading}
@@ -38,7 +23,7 @@ export const AvatarButton: React.FC = ({ children }) => {
         height={44}
       />
 
-      <Popper open={open} anchorEl={avatarRef.current} placement="bottom-start">
+      <Popper open={isOpen} anchorEl={anchorEl.current} placement="bottom-start">
         <Box className={styles.popper_content}>{children}</Box>
       </Popper>
     </Box>
