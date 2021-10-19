@@ -21,9 +21,9 @@ export const BranchButton = () => {
     const path = `/${username}/${repository}/tree/${name}`;
 
     return (
-      <BranchEl path={path} isActive={isActive} key={name}>
+      <Branch path={path} isActive={isActive} key={name}>
         {name}
-      </BranchEl>
+      </Branch>
     );
   });
 
@@ -46,7 +46,7 @@ interface Props {
   path: string;
 }
 
-const BranchEl: React.FC<Props> = ({ isActive, path, children }) => {
+const Branch: React.FC<Props> = ({ isActive, path, children }) => {
   return (
     <Box className={styles.branchEl_main}>
       {isActive && <CheckMark />}

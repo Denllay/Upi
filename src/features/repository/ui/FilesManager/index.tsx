@@ -1,13 +1,11 @@
-import { Box, Typography } from '@mui/material';
-import { useRepoContents, useTypedParams } from '@shared/model';
-import FolderIcon from '@features/repository/assets/icons/folder.svg';
-import FileIcon from '@features/repository/assets/icons/file.svg';
 import React from 'react';
-import styles from './styles.module.scss';
-import { Link } from '@shared/ui';
+import { Box } from '@mui/material';
+import { useRepoContents } from '@shared/model';
 import { FileListSkeleton } from '@shared/ui/Skeletons';
-import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { File } from './File';
+import styles from './styles.module.scss';
+import SyntaxHighlighter from 'react-syntax-highlighter';
 
 export const FilesManager = () => {
   const { data, isLoading } = useRepoContents();
@@ -32,32 +30,5 @@ export const FilesManager = () => {
         {code}
       </SyntaxHighlighter>
     </FileListSkeleton>
-  );
-};
-
-interface Props {
-  type: 'dir' | 'file';
-  name: string;
-  path: string;
-}
-
-const File: React.FC<Props> = ({ path, name, type }) => {
-  const { branch, username, repository } = useTypedParams();
-
-  const icon = type === 'dir' ? <FolderIcon /> : <FileIcon />;
-
-  const branchName = branch && `/tree/${branch}`;
-  const formatedPath = `/${username}/${repository}${branchName}/${path}`;
-
-  return (
-    <Box className={styles.file}>
-      {icon}
-
-      <Link to={formatedPath} className={styles.link}>
-        <Typography variant="button" className={styles.link_text}>
-          {name}
-        </Typography>
-      </Link>
-    </Box>
   );
 };
