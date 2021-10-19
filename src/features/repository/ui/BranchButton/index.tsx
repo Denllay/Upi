@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 
 export const BranchButton = () => {
   const { anchorEl, isOpen, togglePopper } = usePopper<HTMLButtonElement>();
-  // ! TODO move useparams to hook usegetrepo
   const { repository, username, branch } = useTypedParams();
   const { data: repoData } = useGetRepoQuery({ repository, username });
   const { data: branchData, isLoading } = useGetAllRepoBranchesQuery({ repository, username });

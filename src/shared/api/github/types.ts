@@ -39,15 +39,21 @@ export interface LastCommit {
     avatar_url: string;
   };
 }
-
-export interface RepoContents {
+interface RepoContents {
   download_url: string;
   name: string;
   path: string;
   sha: string;
   size: string;
-  type: 'file' | 'dir';
   url: string;
+}
+export interface RepoDirContents extends RepoContents {
+  type: 'dir';
+}
+
+export interface RepoFileContents extends RepoContents {
+  content: string;
+  type: 'file';
 }
 export interface RepoContentsParams {
   ref?: string;

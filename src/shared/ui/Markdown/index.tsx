@@ -41,5 +41,5 @@ export const Markdown: React.FC = ({ children }) => {
 };
 
 const Typography = styled(MuiTypography)<TypographyProps>(() => ({
-  fontFamily: 'Rubik, sans-serif',
+  fontFamily: 'Rubik',
 }));

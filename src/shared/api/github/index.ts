@@ -6,11 +6,12 @@ import {
   GetRepoContents,
   Readme,
   Repo,
-  RepoContents,
   UserData,
   Branch,
   GetLastComment,
   RepoContentsParams,
+  RepoFileContents,
+  RepoDirContents,
 } from './types';
 
 export const githubApi = createApi({
@@ -71,7 +72,7 @@ export const githubApi = createApi({
       query: ({ username, repository }) => `repos/${username}/${repository}/readme`,
     }),
 
-    getRepoContents: builder.query<RepoContents[], GetRepoContents>({
+    getRepoContents: builder.query<RepoDirContents[] | RepoFileContents, GetRepoContents>({
       query: ({ username, repository, path = '', branch }) => {
         const url = `repos/${username}/${repository}/contents/${path}`;
         const params: RepoContentsParams = {};
@@ -79,22 +80,6 @@ export const githubApi = createApi({
         if (branch) {
           params.ref = branch;
         }
-        return {
-          url,
-          params,
-        };
-      },
-    }),
-
-    getFileContents: builder.query<any, GetRepoContents>({
-      query: ({ username, repository, path = '', branch }) => {
-        const url = `repos/${username}/${repository}/contents/${path}`;
-        const params: RepoContentsParams = {};
-
-        if (branch) {
-          params.ref = branch;
-        }
-
         return {
           url,
           params,
@@ -112,5 +97,4 @@ export const {
   useGetAllRepoBranchesQuery,
   useGetLastCommitQuery,
   useGetRepoContentsQuery,
-  useGetFileContentsQuery,
 } = githubApi;

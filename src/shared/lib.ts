@@ -18,3 +18,14 @@ export const Base64Decode = (str: string) => {
       .join('')
   );
 };
+
+interface SortFilesByTypePayload {
+  type: 'file' | 'dir';
+}
+
+export const sortFilesByType = ({ type }: SortFilesByTypePayload) => {
+  if (type === 'dir') {
+    return -1;
+  }
+  return 1;
+};

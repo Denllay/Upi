@@ -7,5 +7,4 @@ export {
   useGetAllRepoBranchesQuery,
   useGetLastCommitQuery,
   useGetRepoContentsQuery,
-  useGetFileContentsQuery,
 } from './github';
