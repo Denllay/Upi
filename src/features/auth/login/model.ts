@@ -1,6 +1,5 @@
 import { UpdateUserDetails } from '@entities/viewer/model';
 import { GithubAuthProvider, signInWithPopup } from '@firebase/auth';
-import { CLIENT_CREDENTIAL } from '@shared/config';
 import { auth, provider } from '@shared/config/firebase';
 import { setLocalStorage } from '@shared/lib';
 import { UserData } from './types';
@@ -23,7 +22,7 @@ export const LoginUser =
       });
 
       if (token) {
-        setLocalStorage<string>(CLIENT_CREDENTIAL, token);
+        setLocalStorage<string>('CLIENT_TOKEN', token);
         const payload = {
           isAuth: true,
           token,

@@ -21,6 +21,11 @@ export interface Repo {
     login: string;
   };
 }
+
+export interface GetAllUserRepos {
+  username?: string;
+  isOwner: boolean;
+}
 export interface Branch {
   commit: {
     author: AuthorBranch;

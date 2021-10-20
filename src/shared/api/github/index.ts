@@ -12,6 +12,7 @@ import {
   RepoContentsParams,
   RepoFileContents,
   RepoDirContents,
+  GetAllUserRepos,
 } from './types';
 
 export const githubApi = createApi({
@@ -40,14 +41,18 @@ export const githubApi = createApi({
       },
     }),
 
-    getAllUserRepos: builder.query<Repo[], string>({
-      query: (username) => `users/${username}/repos`,
+    getAllUserRepos: builder.query<Repo[], GetAllUserRepos>({
+      query: ({ isOwner, username }) => {
+        if (isOwner) {
+          return 'user/repos';
+        }
+
+        return `users/${username}/repos`;
+      },
     }),
 
     getRepo: builder.query<Repo, GetRepo>({
-      query: ({ username, repository }) => ({
-        url: `repos/${username}/${repository}`,
-      }),
+      query: ({ username, repository }) => `repos/${username}/${repository}`,
     }),
 
     getLastCommit: builder.query<LastCommit[], GetLastComment>({

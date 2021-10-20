@@ -2,11 +2,19 @@ import { useViewer } from '@entities/viewer/model';
 import { BackToProfile } from '@entities/viewer/ui';
 import { Box, Typography } from '@mui/material';
 import { Button } from '@shared/ui';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router';
 import styles from './styles.module.scss';
 
 const NotFound = () => {
   const { isAuth } = useViewer();
+  const history = useHistory();
+
+  useEffect(() => {
+    if (!isAuth) {
+      history.push('/login');
+    }
+  }, [isAuth]);
 
   return (
     <Box className={styles.main}>
@@ -16,16 +24,14 @@ const NotFound = () => {
         </Typography>
         <Typography variant="h5">Nothing here </Typography>
         <Typography variant="h5">¯\_(ツ)_/¯</Typography>
-
-        {isAuth && (
-          <Box mt={2}>
-            <BackToProfile>
-              <Button variant="contained" size="small">
-                Go to Profile
-              </Button>
-            </BackToProfile>
-          </Box>
-        )}
+        <Box mt={2}>
+          <BackToProfile>
+            <Button variant="contained" size="small">
+              Go to Profile
+            </Button>
+          </BackToProfile>
+        </Box>
+        )
       </Box>
     </Box>
   );

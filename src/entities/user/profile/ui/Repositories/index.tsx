@@ -3,11 +3,14 @@ import { Box, Typography } from '@mui/material';
 import { useGetAllUserReposQuery } from '@shared/api';
 import { RepositoriesSkeleton, Link } from '@shared/ui';
 import styles from './styles.module.scss';
-import { useTypedParams } from '@shared/model';
+import { useTypedParams, useUserData } from '@shared/model';
 
 export const Repositories = () => {
   const { username } = useTypedParams();
-  const { data, isLoading } = useGetAllUserReposQuery(username);
+  const { data: userData } = useUserData();
+
+  const isOwner = userData.login.toLowerCase() === username.toLowerCase();
+  const { data, isLoading } = useGetAllUserReposQuery({ isOwner, username });
 
   const reposEl = data?.map(({ description, name, owner }) => {
     return <Repository key={name} desc={description} repoName={name} ownerName={owner.login} />;
