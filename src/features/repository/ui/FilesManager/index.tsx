@@ -26,7 +26,7 @@ export const FilesManager = () => {
 
   const { code, fileExtension, size = 0 } = data || {};
 
-  if (size > 20000) {
+  if (size > maxFileSize) {
     return (
       <Box className={styles.big_code}>
         <Typography variant="subtitle1">Sorry, but we can&apos;t show files that are this big right now.</Typography>

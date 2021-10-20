@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { useTypedParams } from '@shared/model';
 import styles from './styles.module.scss';
