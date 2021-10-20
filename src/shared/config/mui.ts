@@ -28,7 +28,10 @@ const commonThemeSettings: ThemeOptions = {
       fontWeight: 600,
       fontSize: 36,
     },
-
+    body1: {
+      fontWeight: 600,
+      fontSize: 22,
+    },
     subtitle1: {
       fontWeight: 300,
       fontSize: 18,

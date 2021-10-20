@@ -30,3 +30,12 @@
     align-items: center;
   }
 }
+
+.login {
+  color: var(--color-primary);
+  cursor: pointer;
+  position: absolute !important;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}

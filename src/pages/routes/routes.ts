@@ -10,38 +10,38 @@ const Repository = lazy(() => import('../repository'));
 
 export const routesConfig: Route[] = [
   {
-    Component: Login,
+    component: Login,
     exact: true,
     isPrivate: false,
     key: 'login',
     path: '/login',
   },
   {
-    Component: Home,
+    component: Home,
     exact: true,
     isPrivate: false,
     key: 'home',
     path: '/home',
   },
   {
-    Component: NotFound,
+    component: NotFound,
     exact: true,
     isPrivate: true,
     key: 'notFound',
     path: '/404',
   },
   {
-    Component: User,
+    component: User,
     exact: true,
-    isPrivate: true,
+    multy: true,
     key: 'user',
     path: `/:${RouteParamsEnum.USERNAME}`,
   },
 
   {
-    Component: Repository,
+    component: Repository,
     exact: false,
-    isPrivate: true,
+    multy: true,
     key: 'repository',
     path: `/:${RouteParamsEnum.USERNAME}/:${RouteParamsEnum.REPOSITORY}/:${RouteParamsEnum.BRANCH}(tree/[^/.]+)?/:${RouteParamsEnum.PATH}(.+)?`,
   },

@@ -1,7 +1,8 @@
 export interface Route {
-  Component: React.FC;
-  isPrivate: boolean;
+  component: React.FC;
   exact: boolean;
   path: string;
   key: string;
+  isPrivate?: boolean;
+  multy?: boolean;
 }
