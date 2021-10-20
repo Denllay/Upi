@@ -1,0 +1,22 @@
+.main {
+  display: flex;
+  align-items: center;
+}
+
+.branch {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.slash {
+  color: #454545;
+  margin: 0 5px;
+}
+.path {
+  cursor: pointer;
+}
+.block {
+  &_path {
+    display: flex;
+  }
+}

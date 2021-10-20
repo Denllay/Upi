@@ -5,3 +5,11 @@
   margin-top: 50px;
   width: 80%;
 }
+
+.block {
+  &_top {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+  }
+}
