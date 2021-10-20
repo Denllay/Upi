@@ -29,7 +29,6 @@ export const githubApi = createApi({
       return headers;
     },
   }),
-
   endpoints: (builder) => ({
     getUserData: builder.query<UserData, string | null | void>({
       query: (username) => {
@@ -46,7 +45,9 @@ export const githubApi = createApi({
     }),
 
     getRepo: builder.query<Repo, GetRepo>({
-      query: ({ username, repository }) => `repos/${username}/${repository}`,
+      query: ({ username, repository }) => ({
+        url: `repos/${username}/${repository}`,
+      }),
     }),
 
     getLastCommit: builder.query<LastCommit[], GetLastComment>({

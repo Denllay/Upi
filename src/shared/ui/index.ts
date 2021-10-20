@@ -1,4 +1,4 @@
-export { Button } from './Button';
+export { Button, ActivityRepositoryButton } from './Button';
 export { Field } from './Field';
 export { Popper } from './Popper';
 export { Skeleton } from './Skeletons/Skeleton';

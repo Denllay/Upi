@@ -7,14 +7,6 @@
 }
 
 .block {
-  &_top {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 50px;
-    width: 60%;
-  }
-
   &_content {
     margin-top: 20px;
     width: 80%;

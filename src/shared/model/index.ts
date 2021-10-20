@@ -4,3 +4,4 @@ export { useREADMERepo } from './useREADMERepo';
 export { useTypedParams } from './useTypedParams';
 export { usePopper } from './usePopper';
 export { useRepoContents } from './useRepoContents';
+export { useCopy } from './useCopy';

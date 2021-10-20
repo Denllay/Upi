@@ -10,8 +10,13 @@ export interface Readme {
 
 export interface Repo {
   name: string;
+  git_url: string;
+  ssh_url: string;
+  clone_url: string;
   description: string | null;
   default_branch: string;
+  stargazers_count: number;
+  forks: number;
   owner: {
     login: string;
   };
@@ -67,6 +72,7 @@ export interface GetRepo {
   username: string;
   repository: string;
 }
+export interface StarRepo extends GetRepo {}
 export interface GetBranch extends GetRepo {
   branch: string;
 }

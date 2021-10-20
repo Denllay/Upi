@@ -24,6 +24,7 @@ export const Tabs = styled((props: StyledTabsProps) => (
 interface StyledTabProps {
   label: string;
   value: number;
+  className?: string;
 }
 
 export const Tab = styled((props: StyledTabProps) => <MuiTab disableRipple {...props} />)(({ theme }) => ({

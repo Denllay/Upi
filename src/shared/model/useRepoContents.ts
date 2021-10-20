@@ -22,12 +22,12 @@ export const useRepoContents = () => {
           return { data: formatedData, isLoading: isLoading || isUninitialized, ...rest };
         }
 
-        const { content = '' } = data || {};
+        const { content = '', size } = data || {};
 
         const decodeContent = Base64Decode(content);
 
         return {
-          data: { code: decodeContent, type: 'file' as const },
+          data: { code: decodeContent, size, type: 'file' as const },
           isLoading: isLoading || isUninitialized,
           ...rest,
         };
