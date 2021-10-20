@@ -1,11 +1,13 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { useRepoContents } from '@shared/model';
-import { FileListSkeleton } from '@shared/ui/Skeletons';
+import { FileListSkeleton, FileSkeleton } from '@shared/ui/Skeletons';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { File } from './File';
 import styles from './styles.module.scss';
 import SyntaxHighlighter from 'react-syntax-highlighter';
+
+const maxFileSize = 20000;
 
 export const FilesManager = () => {
   const { data, isLoading } = useRepoContents();
@@ -22,13 +24,21 @@ export const FilesManager = () => {
     );
   }
 
-  const { code } = data || {};
+  const { code, fileExtension, size = 0 } = data || {};
+
+  if (size > 20000) {
+    return (
+      <Box className={styles.big_code}>
+        <Typography variant="subtitle1">Sorry, but we can&apos;t show files that are this big right now.</Typography>
+      </Box>
+    );
+  }
 
   return (
-    <FileListSkeleton isActive={isLoading}>
-      <SyntaxHighlighter className={styles.code} showLineNumbers style={docco} language="ts">
+    <FileSkeleton isActive={isLoading}>
+      <SyntaxHighlighter className={styles.code} showLineNumbers style={docco} language={fileExtension}>
         {code}
       </SyntaxHighlighter>
-    </FileListSkeleton>
+    </FileSkeleton>
   );
 };

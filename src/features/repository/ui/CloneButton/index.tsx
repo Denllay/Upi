@@ -11,6 +11,7 @@ export const CloneButton = () => {
   const { anchorEl, togglePopper, isOpen } = usePopper<HTMLButtonElement>();
   const [tab, setTab] = useState(1);
   const { copyData, handleClose, isCopy } = useCopy();
+
   const { username, repository } = useTypedParams();
   const { data } = useGetRepoQuery({ username, repository });
 

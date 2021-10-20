@@ -49,7 +49,7 @@ interface RepoContents {
   name: string;
   path: string;
   sha: string;
-  size: string;
+  size: number;
   url: string;
 }
 export interface RepoDirContents extends RepoContents {
