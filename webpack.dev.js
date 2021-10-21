@@ -10,7 +10,10 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, './dist'),
     port: 8080,
-    historyApiFallback: true,
+    historyApiFallback: {
+      index: '/index.html',
+      rewrites: [{ from: /./, to: '/index.html' }],
+    },
   },
 
   plugins: [
