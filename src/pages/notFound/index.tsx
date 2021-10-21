@@ -31,7 +31,6 @@ const NotFound = () => {
             </Button>
           </BackToProfile>
         </Box>
-        )
       </Box>
     </Box>
   );

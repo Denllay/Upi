@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 
 export const Overview = () => {
   const { username } = useTypedParams();
-  const { data, isLoading } = useREADMERepo(username);
+  const { data, isLoading } = useREADMERepo({ username });
 
   return (
     <Box className={styles.main}>

@@ -6,6 +6,7 @@ import { RepositoryFileManager, RepositoryTopBlock } from '@widgets/repository/u
 import { useGetRepoContentsQuery } from '@shared/api';
 import { useTypedParams } from '@shared/model';
 import { useHistory } from 'react-router';
+import { RepositoryReadMe } from '@entities/repository/ui';
 
 const Repository = () => {
   const history = useHistory();
@@ -25,6 +26,7 @@ const Repository = () => {
 
       <Box className={styles.block_content}>
         <RepositoryFileManager />
+        <RepositoryReadMe />
       </Box>
     </Box>
   );

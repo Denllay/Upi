@@ -1,7 +1,7 @@
 import { useGetRepoREADMEQuery } from '@shared/api';
 import { Base64Decode } from '@shared/lib';
 
-export const useREADMERepo = (username: string, repository: string = username) => {
+export const useREADMERepo = ({ username, repository = username }: { username: string; repository?: string }) => {
   const data = useGetRepoREADMEQuery(
     { repository, username },
     {

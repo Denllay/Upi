@@ -38,6 +38,7 @@ module.exports = {
     // ? Optimization + HTML
     new HtmlWebpackPlugin({
       template: path.join(__dirname, './public', 'index.html'),
+      favicon: "./public/favicon.ico",
       minify: {
         removeAttributeQuotes: true,
         collapseWhitespace: true,
