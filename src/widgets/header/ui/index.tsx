@@ -1,7 +1,7 @@
 import React from 'react';
 import { AvatarButton } from '@entities/user/header/ui';
 import { SignOut } from '@features/auth/signOut/ui';
-import { Search } from '@features/search/ui';
+import { SearchHeader } from '@features/search/ui';
 import { Box, Typography } from '@mui/material';
 import styles from './styles.module.scss';
 import AvatarIcon from '../assets/icons/avatar.svg';
@@ -14,7 +14,7 @@ export const Header = () => {
 
   return (
     <Box className={styles.main}>
-      <Search />
+      <SearchHeader />
 
       {isAuth && (
         <AvatarButton>

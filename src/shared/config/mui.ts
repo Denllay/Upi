@@ -86,6 +86,16 @@ const commonThemeSettings: ThemeOptions = {
         },
       ],
     },
+    MuiInput: {
+      styleOverrides: {
+        input: {
+          '&::placeholder': {
+            color: '#c4c4c4',
+          },
+          color: 'white',
+        },
+      },
+    },
   },
 };
 

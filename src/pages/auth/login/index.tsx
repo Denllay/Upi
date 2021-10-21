@@ -1,6 +1,6 @@
-import { Box, Typography } from '@mui/material';
-import { LoginButton } from '@features/auth/login';
 import React from 'react';
+import { Box, Typography } from '@mui/material';
+import { LoginWidget } from '@widgets/auth/login/ui';
 import styles from './styles.module.scss';
 import Logo from '@shared/assets/icons/logo.svg';
 
@@ -13,7 +13,7 @@ const Login = () => {
         </Box>
 
         <Box className={styles.block_1_content}>
-          <LoginButton />
+          <LoginWidget />
         </Box>
       </Box>
       <Box className={styles.block_2}>

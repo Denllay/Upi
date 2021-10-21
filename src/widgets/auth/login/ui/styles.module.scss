@@ -1,0 +1,28 @@
+.main {
+  width: 100%;
+}
+
+.text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  margin: 30px 0;
+
+  &::before,
+  &::after {
+    content: '';
+    height: 2px;
+    width: 80px;
+    background: var(--color-primary);
+  }
+
+  &::after {
+    margin-left: 10px;
+  }
+
+  &::before {
+    margin-right: 10px;
+  }
+}

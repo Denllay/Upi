@@ -1,11 +1,11 @@
 import { Alert, Box, Button, Snackbar, Tab, Tabs, Typography } from '@mui/material';
 import { useCopy, usePopper, useTypedParams } from '@shared/model';
-import { Popper, TabPanel } from '@shared/ui';
+import { Popper, TabPanel, Field } from '@shared/ui';
+import { useGetRepoQuery } from '@shared/api';
 import CloneIcon from '@features/repository/assets/icons/clone.svg';
 import CopyIcon from '@features/repository/assets/icons/copy.svg';
 import React, { SyntheticEvent, useState } from 'react';
 import styles from './styles.module.scss';
-import { useGetRepoQuery } from '@shared/api';
 
 export const CloneButton = () => {
   const { anchorEl, togglePopper, isOpen } = usePopper<HTMLButtonElement>();
@@ -75,9 +75,7 @@ const CloneTab: React.FC<Props> = ({ url, copyData }) => {
 
   return (
     <Box className={styles.popper_tab}>
-      <Typography variant="subtitle2" className={styles.url}>
-        {url}
-      </Typography>
+      <Field className={styles.url} value={url} />
 
       <Box className={styles.copy_block} onClick={onCopy}>
         <CopyIcon />

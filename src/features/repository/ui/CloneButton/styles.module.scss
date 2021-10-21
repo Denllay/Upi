@@ -57,8 +57,14 @@
   }
 }
 .url {
+  background: var(--color-warning);
   color: var(--color-white);
-  padding: 5px 10px;
+  width: 100%;
+  & input {
+    width: 300px;
+    font-size: 18px;
+    font-weight: 300;
+  }
 }
 
 .tabs {

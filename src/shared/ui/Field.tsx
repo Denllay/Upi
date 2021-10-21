@@ -5,6 +5,7 @@ export const Field = styled(MuiInput)<InputProps>(({ theme }) => ({
   color: theme.palette.text.primary,
   borderRadius: 5,
   paddingLeft: 10,
+
   '&::before': {
     display: 'none',
   },
