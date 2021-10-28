@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Field } from '@shared/ui';
-import styles from './styles.module.scss';
-import { Alert, Box, Snackbar } from '@mui/material';
-import Arrow from '@features/search/assets/icons/arrow.svg';
+import { Alert, FormControl, Snackbar } from '@mui/material';
 import { getPathUrl } from '@features/search/lib';
 import { useHistory } from 'react-router';
+import styles from './styles.module.scss';
+import Arrow from '@shared/assets/icons/arrow.svg';
 
 export const SearchItems = () => {
   const [url, setUrl] = useState('');
@@ -31,7 +31,7 @@ export const SearchItems = () => {
 
   return (
     <>
-      <Box className={styles.main}>
+      <FormControl className={styles.main}>
         <Field
           onChange={onChangeUrl}
           value={url}
@@ -42,7 +42,8 @@ export const SearchItems = () => {
         <Button onClick={onSubmit} className={styles.button} variant="contained">
           <Arrow />
         </Button>
-      </Box>
+      </FormControl>
+
       <Snackbar
         open={isError}
         autoHideDuration={6000}

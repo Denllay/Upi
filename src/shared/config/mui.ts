@@ -5,21 +5,21 @@ const commonThemeSettings: ThemeOptions = {
     fontFamily: 'Kulim Park, sans-serif',
 
     h1: {
-      fontFamily: 'Mansalva, cursive',
+      fontFamily: 'Mansalva, sans-serif',
       fontWeight: 500,
       fontSize: 96,
       color: '#ffffff',
     },
 
     h2: {
-      fontFamily: 'Mansalva, cursive',
+      fontFamily: 'Mansalva, sans-serif',
       fontWeight: 600,
       fontSize: 72,
       color: '#ffffff',
     },
 
     h3: {
-      fontFamily: 'Mansalva, cursive',
+      fontFamily: 'Mansalva, sans-serif',
       fontWeight: 500,
       fontSize: 60,
       color: '#ffffff',

@@ -19,7 +19,6 @@ const hConfig: HConfig[] = [
 
 const addHToConfig = (config: Components, hConfig: HConfig[]) => {
   const copyConfig: Components = { ...config };
-  console.log(config);
 
   for (const { type, ...rest } of hConfig) {
     const renderH: React.FC = ({ children }) => <Typography sx={rest}>{children}</Typography>;

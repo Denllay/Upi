@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { useRepoContents } from '@shared/model';
-import { FileListSkeleton, FileSkeleton } from '@shared/ui/Skeletons';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { FileListSkeleton, FileSkeleton } from '@shared/ui';
+import { a11yLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { File } from './File';
 import styles from './styles.module.scss';
 import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -36,7 +36,7 @@ export const FilesManager = () => {
 
   return (
     <FileSkeleton isActive={isLoading}>
-      <SyntaxHighlighter className={styles.code} showLineNumbers style={docco} language={fileExtension}>
+      <SyntaxHighlighter className={styles.code} showLineNumbers style={a11yLight} language={fileExtension}>
         {code}
       </SyntaxHighlighter>
     </FileSkeleton>

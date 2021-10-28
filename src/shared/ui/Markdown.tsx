@@ -6,8 +6,6 @@ import markDownConfig from '@shared/config/markdown';
 import '@shared/assets/fonts/rubik.scss';
 
 export const Markdown: React.FC = ({ children }) => {
-  console.log(markDownConfig);
-
   return (
     <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={markDownConfig}>
       {children as string}

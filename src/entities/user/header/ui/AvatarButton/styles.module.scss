@@ -4,7 +4,8 @@
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  background: #c4c4c4;
+  display: flex;
+  align-items: center;
 }
 
 .popper {
@@ -15,5 +16,12 @@
     height: 50px;
     display: flex;
     flex-direction: column;
+  }
+}
+
+.arrow {
+  transform: rotate(90deg) scale(0.5);
+  & path {
+    fill: var(--color-dark);
   }
 }
