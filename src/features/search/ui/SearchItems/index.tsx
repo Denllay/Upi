@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Field } from '@shared/ui';
-import { Alert, FormControl, Snackbar } from '@mui/material';
+import { Alert, Snackbar } from '@mui/material';
 import { getPathUrl } from '@features/search/lib';
 import { useHistory } from 'react-router';
 import styles from './styles.module.scss';
-import Arrow from '@shared/assets/icons/arrow.svg';
+import ArrowIcon from '@shared/assets/icons/arrow.svg';
 
 export const SearchItems = () => {
   const [url, setUrl] = useState('');
@@ -15,7 +15,8 @@ export const SearchItems = () => {
     setUrl(target.value);
   };
 
-  const onSubmit = () => {
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
     const [, , , path] = getPathUrl(url) || [];
 
     if (path) {
@@ -31,7 +32,7 @@ export const SearchItems = () => {
 
   return (
     <>
-      <FormControl className={styles.main}>
+      <form className={styles.main} onSubmit={onSubmit}>
         <Field
           onChange={onChangeUrl}
           value={url}
@@ -39,10 +40,10 @@ export const SearchItems = () => {
           placeholder="Paste URL of repository or profile"
         />
 
-        <Button onClick={onSubmit} className={styles.button} variant="contained">
-          <Arrow />
+        <Button type="submit" className={styles.button} variant="contained">
+          <ArrowIcon />
         </Button>
-      </FormControl>
+      </form>
 
       <Snackbar
         open={isError}

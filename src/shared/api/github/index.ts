@@ -13,7 +13,7 @@ import {
   RepoFileContents,
   RepoDirContents,
   GetAllUserRepos,
-} from './types';
+} from './models';
 
 export const githubApi = createApi({
   reducerPath: 'githubApi',

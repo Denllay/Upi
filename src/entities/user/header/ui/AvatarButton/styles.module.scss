@@ -20,8 +20,5 @@
 }
 
 .arrow {
-  transform: rotate(90deg) scale(0.5);
-  & path {
-    fill: var(--color-dark);
-  }
+  margin-left: 5px;
 }

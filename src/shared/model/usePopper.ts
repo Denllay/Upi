@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, SyntheticEvent } from 'react';
 
 export const usePopper = <T = HTMLElement>() => {
   const [isOpen, setOpen] = useState(false);
@@ -7,16 +7,28 @@ export const usePopper = <T = HTMLElement>() => {
   useEffect(() => {
     const closePopper = () => setOpen(false);
     window.addEventListener('click', closePopper);
-
     return () => {
       window.removeEventListener('click', closePopper);
     };
   }, []);
 
-  const togglePopper = (e: React.MouseEvent<HTMLElement>) => {
+  const togglePopper = (e: SyntheticEvent) => {
     e.stopPropagation();
+
     setOpen((prev) => !prev);
   };
 
-  return { isOpen, togglePopper, anchorEl };
+  const openPopper = (e: SyntheticEvent) => {
+    e.stopPropagation();
+
+    setOpen(true);
+  };
+
+  const closePopper = (e: SyntheticEvent) => {
+    e.stopPropagation();
+
+    setOpen(false);
+  };
+
+  return { isOpen, togglePopper, openPopper, closePopper, anchorEl };
 };
