@@ -3,18 +3,13 @@ import { Switch, Route } from 'react-router-dom';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 import { routesConfig } from './routes';
+import { RouteWithSubRoutes } from './RouteWithSubRoutes';
 
 const NotFound = lazy(() => import('../notFound'));
 
 export const Routes = () => {
-  const routes = routesConfig.map(({ key, isPrivate, multy, ...props }) => {
-    if (isPrivate) {
-      return <PrivateRoute key={key} {...props} />;
-    } else if (multy) {
-      return <Route key={key} {...props} />;
-    }
-
-    return <PublicRoute key={key} {...props} />;
+  const routes = routesConfig.map(({ key, ...props }) => {
+    return <RouteWithSubRoutes key={key} {...props} />;
   });
 
   return (

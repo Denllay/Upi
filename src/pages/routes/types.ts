@@ -4,5 +4,6 @@ export interface Route {
   path: string;
   key: string;
   isPrivate?: boolean;
-  multy?: boolean;
+  isGlobal?: boolean;
+  routes?: Route[];
 }

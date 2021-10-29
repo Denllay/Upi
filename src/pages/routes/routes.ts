@@ -1,4 +1,6 @@
+import Search from '@pages/search';
 import { RouteParamsEnum } from '@shared/config/router';
+import { SearchCode } from '@widgets/search/code/ui';
 import { lazy } from 'react';
 import { Route } from './types';
 
@@ -33,7 +35,7 @@ export const routesConfig: Route[] = [
   {
     component: User,
     exact: true,
-    multy: true,
+    isGlobal: true,
     key: 'user',
     path: `/:${RouteParamsEnum.USERNAME}`,
   },
@@ -41,8 +43,24 @@ export const routesConfig: Route[] = [
   {
     component: Repository,
     exact: false,
-    multy: true,
+    isGlobal: true,
     key: 'repository',
     path: `/:${RouteParamsEnum.USERNAME}/:${RouteParamsEnum.REPOSITORY}/:${RouteParamsEnum.BRANCH}(tree/[^/.]+)?/:${RouteParamsEnum.PATH}(.+)?`,
+  },
+  {
+    component: Search,
+    exact: false,
+    isGlobal: true,
+    key: 'search',
+    path: '/search',
+    routes: [
+      {
+        component: SearchCode,
+        exact: false,
+        isGlobal: true,
+        key: 'search_code',
+        path: `/search([^.]+)?:${RouteParamsEnum.SEARCH_TYPE}(type=[^.]+)`,
+      },
+    ],
   },
 ];

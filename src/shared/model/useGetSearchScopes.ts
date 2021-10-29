@@ -17,14 +17,14 @@ export const useGetSearchScopes = () => {
 
   const scopeSearchList: ScopeSearchList[] = [
     {
-      name: ScopeNameList.USERNAME,
-      type: 'username',
-      data: username,
-    },
-    {
       name: ScopeNameList.REPOSITORY,
       type: 'repository',
       data: repository,
+    },
+    {
+      name: ScopeNameList.USERNAME,
+      type: 'username',
+      data: username,
     },
     {
       name: ScopeNameList.GITHUB,

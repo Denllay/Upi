@@ -22,10 +22,6 @@ export interface Repo {
   };
 }
 
-export interface GetAllUserRepos {
-  username?: string;
-  isOwner: boolean;
-}
 export interface Branch {
   commit: {
     author: AuthorBranch;
@@ -88,4 +84,15 @@ export interface GetRepoContents extends GetRepo {
   path?: string;
   branch?: string;
 }
+
 export interface GetLastComment extends GetRepoContents {}
+
+export interface GetAllUserRepos {
+  username?: string;
+  isOwner: boolean;
+}
+
+export interface SearchParams {
+  q: string | undefined;
+  page: number;
+}
