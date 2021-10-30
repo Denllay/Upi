@@ -1,15 +1,16 @@
 import React, { lazy } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { PrivateRoute } from './PrivateRoute';
-import { PublicRoute } from './PublicRoute';
 import { routesConfig } from './routes';
-import { RouteWithSubRoutes } from './RouteWithSubRoutes';
+import { RouteWithSubRoutes } from './customRoutes/RouteWithSubRoutes';
+import { withRoutes } from './with-routes';
 
 const NotFound = lazy(() => import('../notFound'));
 
 export const Routes = () => {
-  const routes = routesConfig.map(({ key, ...props }) => {
-    return <RouteWithSubRoutes key={key} {...props} />;
+  const routes = routesConfig.map(({ key, component, routes, ...props }) => {
+    const ComponentsWithRoutes = withRoutes(component, routes);
+
+    return <RouteWithSubRoutes key={key} component={ComponentsWithRoutes} {...props} />;
   });
 
   return (

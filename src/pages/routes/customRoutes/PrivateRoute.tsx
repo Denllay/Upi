@@ -1,9 +1,9 @@
 import React from 'react';
 import { useViewer } from '@entities/viewer/model';
-import { Route as TRoute } from './types';
+import { RouteComponent } from '../types';
 import { Redirect, Route } from 'react-router';
 
-export const PrivateRoute: React.FC<Omit<TRoute, 'key' | 'isPrivate'>> = ({ ...props }) => {
+export const PrivateRoute: React.FC<RouteComponent> = ({ ...props }) => {
   const { isAuth } = useViewer();
 
   if (isAuth === null) return null;

@@ -2,7 +2,7 @@ import Search from '@pages/search';
 import { RouteParamsEnum } from '@shared/config/router';
 import { SearchCode } from '@widgets/search/code/ui';
 import { lazy } from 'react';
-import { Route } from './types';
+import { RoutesConfig } from './types';
 
 const NotFound = lazy(() => import('../notFound'));
 const Home = lazy(() => import('../home'));
@@ -10,7 +10,9 @@ const Login = lazy(() => import('../auth/login'));
 const User = lazy(() => import('../user'));
 const Repository = lazy(() => import('../repository'));
 
-export const routesConfig: Route[] = [
+// ** route "user" must be last because he overlaps other routes
+
+export const routesConfig: RoutesConfig[] = [
   {
     component: Login,
     exact: true,
@@ -33,22 +35,7 @@ export const routesConfig: Route[] = [
     path: '/404',
   },
   {
-    component: User,
-    exact: true,
-    isGlobal: true,
-    key: 'user',
-    path: `/:${RouteParamsEnum.USERNAME}`,
-  },
-
-  {
-    component: Repository,
-    exact: false,
-    isGlobal: true,
-    key: 'repository',
-    path: `/:${RouteParamsEnum.USERNAME}/:${RouteParamsEnum.REPOSITORY}/:${RouteParamsEnum.BRANCH}(tree/[^/.]+)?/:${RouteParamsEnum.PATH}(.+)?`,
-  },
-  {
-    component: Search,
+    component: Search as React.FC,
     exact: false,
     isGlobal: true,
     key: 'search',
@@ -62,5 +49,19 @@ export const routesConfig: Route[] = [
         path: `/search([^.]+)?:${RouteParamsEnum.SEARCH_TYPE}(type=[^.]+)`,
       },
     ],
+  },
+  {
+    component: Repository,
+    exact: false,
+    isGlobal: true,
+    key: 'repository',
+    path: `/:${RouteParamsEnum.USERNAME}/:${RouteParamsEnum.REPOSITORY}/:${RouteParamsEnum.BRANCH}(tree/[^/.]+)?/:${RouteParamsEnum.PATH}(.+)?`,
+  },
+  {
+    component: User,
+    exact: true,
+    isGlobal: true,
+    key: 'user',
+    path: `/:${RouteParamsEnum.USERNAME}`,
   },
 ];
