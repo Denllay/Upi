@@ -8,7 +8,7 @@ interface Props {
   searchData: string;
 }
 
-export const SearchScope: React.FC<ScopeSearchList & Props> = ({ searchData, name, data }) => {
+export const Scope: React.FC<ScopeSearchList & Props> = ({ searchData, name, data }) => {
   if (!searchData || !data) return null;
 
   return (

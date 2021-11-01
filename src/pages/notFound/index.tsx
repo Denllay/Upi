@@ -1,5 +1,4 @@
-import { useViewer } from '@entities/viewer/model';
-import { BackToProfile } from '@entities/viewer/ui';
+import { viewerModel, ViewerBackToProfile } from '@entities/viewer';
 import { Box, Typography } from '@mui/material';
 import { Button } from '@shared/ui';
 import React, { useEffect } from 'react';
@@ -7,7 +6,7 @@ import { useHistory } from 'react-router';
 import styles from './styles.module.scss';
 
 const NotFound = () => {
-  const { isAuth } = useViewer();
+  const { isAuth } = viewerModel.useViewer();
   const history = useHistory();
 
   useEffect(() => {
@@ -25,11 +24,11 @@ const NotFound = () => {
         <Typography variant="h5">Nothing here </Typography>
         <Typography variant="h5">¯\_(ツ)_/¯</Typography>
         <Box mt={2}>
-          <BackToProfile>
+          <ViewerBackToProfile>
             <Button variant="contained" size="small">
               Go to Profile
             </Button>
-          </BackToProfile>
+          </ViewerBackToProfile>
         </Box>
       </Box>
     </Box>

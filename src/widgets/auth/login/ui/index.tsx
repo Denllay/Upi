@@ -4,7 +4,7 @@ import { Box, Typography } from '@mui/material';
 import React from 'react';
 import styles from './styles.module.scss';
 
-export const LoginWidget = () => {
+export const Login = () => {
   return (
     <Box className={styles.main}>
       <SearchItems />

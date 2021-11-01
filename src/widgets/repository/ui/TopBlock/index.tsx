@@ -1,8 +1,7 @@
 import React from 'react';
-import { BranchButton, RepositoryName, RepositoryNavigator } from '@features/repository/ui';
+import { RepositoryName, RepositoryBranchButton, RepositoryNavigator, RepositoryCloneButton } from '@features/repository';
 import { Box } from '@mui/material';
 import styles from './styles.module.scss';
-import { CloneButton } from '@features/repository/ui/CloneButton';
 
 export const TopBlock = () => {
   return (
@@ -10,7 +9,7 @@ export const TopBlock = () => {
       <Box>
         <RepositoryName />
         <Box className={styles.block_top}>
-          <BranchButton />
+          <RepositoryBranchButton />
 
           <Box ml={2}>
             <RepositoryNavigator />
@@ -19,7 +18,7 @@ export const TopBlock = () => {
       </Box>
 
       <Box>
-        <CloneButton />
+        <RepositoryCloneButton />
       </Box>
     </Box>
   );

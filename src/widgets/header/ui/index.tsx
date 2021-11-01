@@ -1,32 +1,31 @@
 import React from 'react';
-import { AvatarButton } from '@entities/user/header/ui';
-import { SignOut } from '@features/auth/signOut/ui';
-import { SearchHeader } from '@features/search/ui';
+import { HeaderAvatarButton } from '@entities/user/header';
+import { SignOutButton } from '@features/auth/signOut';
+import { SearchScopes } from '@features/search';
 import { Box, Typography } from '@mui/material';
 import styles from './styles.module.scss';
 import AvatarIcon from '../assets/icons/avatar.svg';
-import { BackToProfile } from '@entities/viewer/ui';
-import { useViewer } from '@entities/viewer/model';
 import { Link } from '@shared/ui';
+import { viewerModel, ViewerBackToProfile } from '@entities/viewer';
 
 export const Header = () => {
-  const { isAuth } = useViewer();
+  const { isAuth } = viewerModel.useViewer();
 
   return (
     <Box className={styles.main}>
-      <SearchHeader />
+      <SearchScopes />
 
       {isAuth && (
-        <AvatarButton>
+        <HeaderAvatarButton>
           <Box className={styles.popper_item}>
-            <BackToProfile className={styles.button_profile}>
+            <ViewerBackToProfile className={styles.button_profile}>
               <AvatarIcon />
               <Typography variant="button">Profile</Typography>
-            </BackToProfile>
+            </ViewerBackToProfile>
           </Box>
 
-          <SignOut />
-        </AvatarButton>
+          <SignOutButton />
+        </HeaderAvatarButton>
       )}
 
       {!isAuth && (

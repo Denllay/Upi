@@ -1,2 +1,2 @@
-export { SearchItems } from './SearchItems';
-export { SearchHeader } from './SearchHeader';
+export { Scopes as SearchScopes } from './Scopes';
+export { Items as SearchItems } from './Items';

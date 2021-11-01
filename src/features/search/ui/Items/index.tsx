@@ -6,7 +6,7 @@ import { useHistory } from 'react-router';
 import styles from './styles.module.scss';
 import ArrowIcon from '@shared/assets/icons/arrow.svg';
 
-export const SearchItems = () => {
+export const Items = () => {
   const [url, setUrl] = useState('');
   const [isError, setError] = useState(false);
   const history = useHistory();

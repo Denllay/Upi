@@ -1,6 +1,6 @@
 import Search from '@pages/search';
 import { RouteParamsEnum } from '@shared/config/router';
-import { SearchCode } from '@widgets/search/code/ui';
+import { SearchCode } from '@widgets/search/code';
 import { lazy } from 'react';
 import { RoutesConfig } from './types';
 

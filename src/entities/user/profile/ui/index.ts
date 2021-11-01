@@ -1,3 +1,3 @@
-export { About as AboutProfile } from './About';
-export { Overview as OverviewProfile } from './Overview';
-export { Repositories as RepositoriesProfile } from './Repositories';
+export { About as ProfileAbout } from './About';
+export { Overview as ProfileOverview } from './Overview';
+export { Repositories as ProfileRepositories } from './Repositories';

@@ -1,10 +1,10 @@
 import React, { SyntheticEvent, useState } from 'react';
-import styles from './styles.module.scss';
-import { AboutProfile, OverviewProfile, RepositoriesProfile } from '@entities/user/profile/ui';
+import { ProfileAbout, ProfileOverview, ProfileRepositories } from '@entities/user/profile';
 import { Box } from '@mui/material';
 import { Tab, Tabs, TabPanel } from '@shared/ui';
+import styles from './styles.module.scss';
 
-export const UserCard = () => {
+export const Card = () => {
   const [tab, setTab] = useState(1);
 
   const changeTab = (_: SyntheticEvent, value: number) => {
@@ -13,7 +13,7 @@ export const UserCard = () => {
 
   return (
     <Box className={styles.main}>
-      <AboutProfile />
+      <ProfileAbout />
 
       <Box className={styles.tabs}>
         <Tabs value={tab} onChange={changeTab}>
@@ -23,11 +23,11 @@ export const UserCard = () => {
       </Box>
 
       <TabPanel value={tab} index={1}>
-        <OverviewProfile />
+        <ProfileOverview />
       </TabPanel>
 
       <TabPanel value={tab} index={2}>
-        <RepositoriesProfile />
+        <ProfileRepositories />
       </TabPanel>
     </Box>
   );

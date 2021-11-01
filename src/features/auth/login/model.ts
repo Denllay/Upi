@@ -1,4 +1,4 @@
-import { UpdateUserDetails } from '@entities/viewer/model';
+import { viewerModel } from '@entities/viewer';
 import { GithubAuthProvider, signInWithPopup } from '@firebase/auth';
 import { auth, provider } from '@shared/config/firebase';
 import { setLocalStorage } from '@shared/lib';
@@ -29,7 +29,7 @@ export const LoginUser =
           login,
         };
 
-        dispatch(UpdateUserDetails(payload));
+        dispatch(viewerModel.UpdateUserDetails(payload));
         history.push(`/${login}`);
       } else {
         Promise.reject(new Error('Insufficient data'));

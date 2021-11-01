@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { Box } from '@mui/material';
-import styles from './styles.module.scss';
-import { Header } from '@widgets/header/ui';
-import { RepositoryFileManager, RepositoryTopBlock } from '@widgets/repository/ui';
+import { Header } from '@widgets/header';
+import { RepositoryReadMe } from '@entities/repository';
+import { RepositoryFileManager, RepositoryTopBlock } from '@widgets/repository';
 import { useGetRepoContentsQuery } from '@shared/api';
 import { useTypedParams } from '@shared/model';
 import { useHistory } from 'react-router';
-import { RepositoryReadMe } from '@entities/repository/ui';
+import styles from './styles.module.scss';
 
 const Repository = () => {
   const history = useHistory();

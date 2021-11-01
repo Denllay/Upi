@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import { GrowPopper, UserAvatar } from '@shared/ui';
 import { usePopper, useUserData } from '@shared/model';
 import styles from './styles.module.scss';
-import ArrowIcon from '../assets/icons/arrow.svg';
+import ArrowIcon from '@entities/user/header/assets/icons/arrow.svg';
 
 export const AvatarButton: React.FC = ({ children }) => {
   const { data, isLoading } = useUserData();

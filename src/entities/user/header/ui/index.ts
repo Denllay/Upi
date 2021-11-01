@@ -1,1 +1,1 @@
-export { AvatarButton } from './AvatarButton';
+export { AvatarButton as HeaderAvatarButton } from './AvatarButton';

@@ -1,5 +1,5 @@
 import { getLocalStorage } from '@shared/lib';
-import { UpdateUserDetails } from '.';
+import { UpdateUserDetails } from './slice';
 
 export const initialViewer = (): AppThunk => (dispatch) => {
   try {

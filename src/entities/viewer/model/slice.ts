@@ -7,7 +7,7 @@ const initialState: ViewerInitialState = {
   login: null,
 };
 
-export const Viewer = createSlice({
+const Viewer = createSlice({
   name: 'Viewer',
   initialState,
   reducers: {
@@ -19,3 +19,6 @@ export const Viewer = createSlice({
     },
   },
 });
+
+export const { SignOutUser, UpdateUserDetails } = Viewer.actions;
+export const { reducer } = Viewer;

@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Field, SlidePopper } from '@shared/ui';
 import { Box } from '@mui/material';
 import { useGetSearchScopes, usePopper } from '@shared/model';
-import { SearchScope } from '@entities/search/ui';
+import { SearchScope } from '@entities/search';
 import styles from './styles.module.scss';
 
-export const SearchHeader = () => {
+export const Scopes = () => {
   const { openPopper, isOpen, anchorEl } = usePopper<HTMLInputElement>();
   const [searchData, setSearchData] = useState('');
   const scopeList = useGetSearchScopes();
@@ -20,6 +20,7 @@ export const SearchHeader = () => {
   const scopeListEl = scopeList.map((props) => {
     return <SearchScope {...props} searchData={searchData} key={props.type} />;
   });
+
   return (
     <Box className={`${styles.main} ${activeStyles('main')}`}>
       <Field

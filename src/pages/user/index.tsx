@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { Box } from '@mui/material';
 import { Header } from '@widgets/header/ui';
-import { UserCard } from '@widgets/user/card/ui';
-import styles from './styles.module.scss';
+import { UserCard } from '@widgets/user/card';
 import { useTypedParams, useUserData } from '@shared/model';
 import { useHistory } from 'react-router';
+import styles from './styles.module.scss';
 
 const User = () => {
   const history = useHistory();
