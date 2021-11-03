@@ -28,6 +28,11 @@ const commonThemeSettings: ThemeOptions = {
       fontWeight: 600,
       fontSize: 36,
     },
+    h6: {
+      fontSize: 25,
+      fontWeight: 300,
+    },
+
     body1: {
       fontWeight: 600,
       fontSize: 22,

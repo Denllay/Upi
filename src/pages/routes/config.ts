@@ -46,7 +46,7 @@ export const routesConfig: RoutesConfig[] = [
         exact: false,
         isGlobal: true,
         key: 'search_code',
-        path: `/search([^.]+)?:${RouteParamsEnum.SEARCH_TYPE}(type=[^.]+)`,
+        path: '/search([^.]+)?(&type=code)?',
       },
     ],
   },

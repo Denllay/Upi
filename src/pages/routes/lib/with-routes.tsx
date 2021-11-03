@@ -1,5 +1,5 @@
 import React from 'react';
-import { RoutesConfig } from './types';
+import { RoutesConfig } from '../types';
 
 interface PropsWrappedComponent {
   routes?: RoutesConfig[];

@@ -1,1 +1,1 @@
-export { Scope as SearchScope } from './ui';
+export * from './ui';

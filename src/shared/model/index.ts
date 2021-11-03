@@ -1,8 +1,9 @@
-export { useTypedSelector } from './useTypedSelector';
-export { useUserData } from './useUserData';
-export { useREADMERepo } from './useREADMERepo';
-export { useTypedParams } from './useTypedParams';
-export { usePopper } from './usePopper';
-export { useRepoContents } from './useRepoContents';
-export { useCopy } from './useCopy';
-export { useGetSearchScopes } from './useGetSearchScopes';
+export * from './useTypedSelector';
+export * from './useUserData';
+export * from './useREADMERepo';
+export * from './useTypedParams';
+export * from './usePopper';
+export * from './useRepoContents';
+export * from './useCopy';
+export * from './useGetSearchScopes';
+export * from './useQuery';

@@ -24,27 +24,6 @@ export const userApiSlice = githubApi.injectEndpoints({
       }),
     }),
 
-    searchIssues: builder.query<any, SearchParams>({
-      query: (params) => ({
-        url: 'search/issues',
-        params,
-      }),
-    }),
-
-    searchLabels: builder.query<any, SearchParams>({
-      query: (params) => ({
-        url: 'search/labels',
-        params,
-      }),
-    }),
-
-    searchTopics: builder.query<any, SearchParams>({
-      query: (params) => ({
-        url: 'search/topics',
-        params,
-      }),
-    }),
-
     searchUsers: builder.query<any, SearchParams>({
       query: (params) => ({
         url: 'search/users',
@@ -54,12 +33,4 @@ export const userApiSlice = githubApi.injectEndpoints({
   }),
 });
 
-export const {
-  useSearchRepositoriesQuery,
-  useSearchCodeQuery,
-  useSearchCommitsQuery,
-  useSearchUsersQuery,
-  useSearchLabelsQuery,
-  useSearchTopicsQuery,
-  useSearchIssuesQuery,
-} = userApiSlice;
+export const { useSearchRepositoriesQuery, useSearchCodeQuery, useSearchCommitsQuery, useSearchUsersQuery } = userApiSlice;

@@ -1,6 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
-import { Button } from '@shared/ui';
+import { Button, Link } from '@shared/ui';
 import React from 'react';
 import styles from './styles.module.scss';
 import Logo from '@shared/assets/icons/logo.svg';
