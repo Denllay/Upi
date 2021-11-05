@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Field, SlidePopper } from '@shared/ui';
 import { Box } from '@mui/material';
-import { useGetSearchScopes, usePopper } from '@shared/model';
+import { usePopper } from '@shared/model';
 import { SearchScope } from '@entities/search';
+import { useGetSearchScopes } from '@features/search/model';
 import styles from './styles.module.scss';
 
 export const Scopes = () => {

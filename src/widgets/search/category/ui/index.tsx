@@ -1,34 +1,23 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, capitalize, Typography } from '@mui/material';
 import { searchCategoryConfig } from '../config';
 import styles from './styles.module.scss';
-import { Link } from 'react-router-dom';
-import { useSearchParams } from '@shared/model';
-import { checkRequirements } from '../lib';
+import { useSearch } from '@features/search/model';
 
 export const CategoryList = () => {
-  const categoryListEl = searchCategoryConfig.map(({ type, name, requirements }) => {
-    const {
-      pathWithParams,
-      formattedParams: { q = '' },
-    } = useSearchParams({ type });
+  const { changeType } = useSearch();
 
-    if (requirements) {
-      const qParams = decodeURIComponent(q)
-        .replace(/:[\w\\\/]+/g, '')
-        .split(' ');
+  const categoryListEl = searchCategoryConfig.map((type) => {
+    const name = capitalize(type);
 
-      const isNotValid = !checkRequirements({ requirements, queryParams: qParams });
-
-      if (isNotValid) {
-        return null;
-      }
-    }
+    const onHandleCategory = () => {
+      changeType(type);
+    };
 
     return (
-      <Link className={styles.link} key={pathWithParams} to={pathWithParams}>
+      <Typography onClick={onHandleCategory} className={styles.link} key={type}>
         {name}
-      </Link>
+      </Typography>
     );
   });
 

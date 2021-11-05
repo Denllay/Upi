@@ -3,5 +3,4 @@ export enum RouteParamsEnum {
   REPOSITORY = 'repository',
   BRANCH = 'branch',
   PATH = 'path',
-  SEARCH_TYPE = 'searchType',
 }

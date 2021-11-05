@@ -1,15 +1,22 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import { ScopeSearchList } from '@shared/model/useGetSearchScopes';
 import ArrowIcon from '@entities/search/assets/icons/arrow.svg';
 import styles from './styles.module.scss';
 
+export enum ScopeNames {
+  USERNAME = 'In this user',
+  REPOSITORY = 'In this repository',
+  GITHUB = 'All Github',
+}
 interface Props {
   searchData: string;
+  name: ScopeNames;
+  type: 'username' | 'repository' | 'github';
+  queryParam: string | undefined;
 }
 
-export const Scope: React.FC<ScopeSearchList & Props> = ({ searchData, name, data }) => {
-  if (!searchData || !data) return null;
+export const Scope: React.FC<Props> = ({ searchData, name, queryParam }) => {
+  if (!searchData || !queryParam) return null;
 
   return (
     <Box className={styles.main}>

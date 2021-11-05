@@ -5,5 +5,3 @@ export * from './useTypedParams';
 export * from './usePopper';
 export * from './useRepoContents';
 export * from './useCopy';
-export * from './useGetSearchScopes';
-export * from './useQuery';

@@ -3,16 +3,9 @@ import { Box } from '@mui/material';
 import { SearchCategoryList } from '@widgets/search/category';
 import { Header } from '@widgets/header';
 import { SearchTopBlock } from '@widgets/search/TopBlock';
-import { renderListRoutes, RoutesConfig } from '@pages/routes';
 import styles from './styles.module.scss';
 
-interface Props {
-  routes: RoutesConfig[];
-}
-
-const Search: React.FC<Props> = ({ routes }) => {
-  const routesEl = renderListRoutes(routes);
-
+const Search = () => {
   return (
     <Box className={styles.main}>
       <Header />
@@ -25,7 +18,7 @@ const Search: React.FC<Props> = ({ routes }) => {
         <Box className={styles.content}>
           <SearchTopBlock />
 
-          <Box className={styles.results}>{routesEl}</Box>
+          <Box className={styles.results}></Box>
         </Box>
       </Box>
     </Box>

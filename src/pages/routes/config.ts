@@ -1,10 +1,9 @@
-import Search from '@pages/search';
 import { RouteParamsEnum } from '@shared/config/router';
-import { SearchCode } from '@widgets/search/code';
 import { lazy } from 'react';
 import { RoutesConfig } from './types';
 
 const NotFound = lazy(() => import('../notFound'));
+const Search = lazy(() => import('../search'));
 const Home = lazy(() => import('../home'));
 const Login = lazy(() => import('../auth/login'));
 const User = lazy(() => import('../user'));
@@ -35,20 +34,11 @@ export const routesConfig: RoutesConfig[] = [
     path: '/404',
   },
   {
-    component: Search as React.FC,
+    component: Search,
     exact: false,
     isGlobal: true,
     key: 'search',
     path: '/search',
-    routes: [
-      {
-        component: SearchCode,
-        exact: false,
-        isGlobal: true,
-        key: 'search_code',
-        path: '/search([^.]+)?(&type=code)?',
-      },
-    ],
   },
   {
     component: Repository,

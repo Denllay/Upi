@@ -2,6 +2,8 @@
   text-transform: none !important;
   margin-left: 5px !important;
   &_item {
+    display: flex;
+    align-items: center;
     border-bottom: 1px solid var(--color-warning);
     padding: 5px;
   }
@@ -13,20 +15,17 @@
 
 .popper {
   &_content {
-    width: 200px;
+    min-width: 220px;
   }
 
   &_link {
+    cursor: pointer;
     font-family: 'Rubik', sans-serif;
     color: var(--color-dark);
     margin-left: 5px;
     font-size: 12px;
     text-transform: uppercase;
   }
-}
-
-.button {
-  width: 200px;
 }
 
 .arrow {

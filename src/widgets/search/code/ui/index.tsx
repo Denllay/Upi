@@ -4,5 +4,5 @@ import React, { useEffect } from 'react';
 import styles from './styles.module.scss';
 
 export const Code = () => {
-  return <Box>code</Box>;
+  return <Box>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</Box>;
 };
