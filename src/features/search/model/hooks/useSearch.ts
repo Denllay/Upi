@@ -9,9 +9,7 @@ export const useSearch = () => {
   const { setSortParams, sortParams, activeOption, setDefaultSort } = useSortSearch();
 
   const changeQuery = (query: string) => {
-    const encodedQuery = encodeURIComponent(query);
-
-    setQueryParam(encodedQuery);
+    setQueryParam(query);
     setPageParam(1);
     setDefaultSort();
   };

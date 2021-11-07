@@ -1,7 +1,7 @@
 import { getLocalStorage } from '@shared/lib';
 import { UpdateUserDetails } from './slice';
 
-export const initialViewer = (): AppThunk => (dispatch) => {
+export const initialize = (): AppThunk => (dispatch) => {
   try {
     const token = getLocalStorage<string>('CLIENT_TOKEN');
 

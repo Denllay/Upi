@@ -9,16 +9,19 @@ export const useGetSearchScopes = () => {
       name: ScopeNames.REPOSITORY,
       type: 'repository',
       queryParam: `repo:${username}/${repository}`,
+      isVisible: !!username && !!repository,
     },
     {
       name: ScopeNames.USERNAME,
       type: 'username',
       queryParam: `user:${username}`,
+      isVisible: !!username,
     },
     {
       name: ScopeNames.GITHUB,
       type: 'github',
       queryParam: undefined,
+      isVisible: true,
     },
   ];
 

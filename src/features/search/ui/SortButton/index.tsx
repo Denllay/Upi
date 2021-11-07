@@ -1,19 +1,18 @@
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { Select } from '@shared/ui';
 import styles from './styles.module.scss';
 import CheckMark from '@shared/assets/icons/check-mark.svg';
 import Arrow from '@shared/assets/icons/arrow.svg';
-import { SortOption, useSortSearch } from '@features/search/model';
+import { searchModel } from '@features/search';
 
 export const SortButton = () => {
-  const [sortCategory, setSortCategory] = useState<string>('Best match');
-  const { activeOptionScope } = useSortSearch();
+  const { activeOptionScope, activeOption } = searchModel.useSortSearch();
 
   const categoryListEl = activeOptionScope.map(({ name, ...props }) => {
-    const isActive = sortCategory === name;
+    const isActive = activeOption?.name === name;
 
-    return <Category setCategory={setSortCategory} key={name} name={name} isActive={isActive} {...props} />;
+    return <Category key={name} name={name} isActive={isActive} {...props} />;
   });
 
   return (
@@ -27,7 +26,7 @@ export const SortButton = () => {
         Sort:
       </Typography>
       <Typography className={styles.category} variant="button">
-        {sortCategory}
+        {activeOption?.name}
       </Typography>
     </Select>
   );
@@ -35,14 +34,12 @@ export const SortButton = () => {
 
 interface Props {
   isActive: boolean;
-  setCategory: Dispatch<SetStateAction<string>>;
 }
 
-const Category: React.FC<Props & SortOption> = ({ name, o, s, isActive, setCategory }) => {
-  const { setSortParams } = useSortSearch();
+const Category: React.FC<Props & searchModel.SortOption> = ({ name, o, s, isActive }) => {
+  const { setSortParams } = searchModel.useSortSearch();
 
   const onHandleSort = () => {
-    setCategory(name);
     setSortParams({ o, s });
   };
 

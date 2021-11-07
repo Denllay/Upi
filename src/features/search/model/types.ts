@@ -19,4 +19,5 @@ export interface SearchScopes {
   name: ScopeNames;
   type: 'username' | 'repository' | 'github';
   queryParam: string | undefined;
+  isVisible: boolean;
 }

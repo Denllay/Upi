@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, capitalize, Typography } from '@mui/material';
 import { searchCategoryConfig } from '../config';
-import styles from './styles.module.scss';
 import { useSearch } from '@features/search/model';
+import styles from './styles.module.scss';
 
 export const CategoryList = () => {
   const { changeType } = useSearch();

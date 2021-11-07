@@ -1,11 +1,11 @@
+import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { useGetAllRepoBranchesQuery, useGetRepoQuery } from '@shared/api';
 import { Select, Skeleton } from '@shared/ui';
-import React from 'react';
-import styles from './styles.module.scss';
-import CheckMark from '@shared/assets/icons/check-mark.svg';
 import { useTypedParams } from '@shared/model';
 import { Link } from 'react-router-dom';
+import CheckMark from '@shared/assets/icons/check-mark.svg';
+import styles from './styles.module.scss';
 
 export const BranchButton = () => {
   const { repository, username, branch } = useTypedParams();

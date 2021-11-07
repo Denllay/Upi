@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 import { Field, SlidePopper } from '@shared/ui';
 import { Box } from '@mui/material';
 import { usePopper } from '@shared/model';
-import { SearchScope } from '@entities/search';
-import { useGetSearchScopes } from '@features/search/model';
+import { Scope } from './Scope';
+import { searchModel } from '@features/search';
 import styles from './styles.module.scss';
 
 export const Scopes = () => {
   const { openPopper, isOpen, anchorEl } = usePopper<HTMLInputElement>();
-  const [searchData, setSearchData] = useState('');
-  const scopeList = useGetSearchScopes();
+  const { queryParam = '' } = searchModel.useSearch();
+  const [searchData, setSearchData] = useState(queryParam);
+  const scopeList = searchModel.useGetSearchScopes();
 
   const isActivePopper = isOpen && !!searchData;
+
   const activeStyles = (style: string) => (isActivePopper ? styles[`${style}_active`] : '');
 
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,7 +21,7 @@ export const Scopes = () => {
   };
 
   const scopeListEl = scopeList.map((props) => {
-    return <SearchScope {...props} searchData={searchData} key={props.type} />;
+    return <Scope searchData={searchData} key={props.type} {...props} />;
   });
 
   return (
