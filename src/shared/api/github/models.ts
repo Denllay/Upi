@@ -94,5 +94,12 @@ export interface GetAllUserRepos {
 
 export interface SearchParams {
   q: string | undefined;
+  s: string | undefined;
+  o: string | undefined;
   page: number;
 }
+
+export type SearchOnCacheEntryAdded = (
+  arg: SearchParams,
+  { cacheDataLoaded, dispatch }: { cacheDataLoaded: Promise<{ data: any }>; dispatch: AppDispatch }
+) => Promise<void>;

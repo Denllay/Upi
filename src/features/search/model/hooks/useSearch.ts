@@ -25,6 +25,13 @@ export const useSearch = () => {
     setPageParam(1);
   };
 
+  const searchParams = {
+    q: queryParam,
+    page: pageParam,
+    s: sortParams.s,
+    o: sortParams.o,
+  };
+
   return {
     queryParam,
     pageParam,
@@ -34,5 +41,6 @@ export const useSearch = () => {
     changeQuery,
     changeType,
     changeSort,
+    searchParams,
   };
 };

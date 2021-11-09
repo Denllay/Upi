@@ -3,8 +3,8 @@ import { GithubAuthProvider, signInWithPopup } from '@firebase/auth';
 import { auth, provider } from '@shared/config/firebase';
 import { setLocalStorage } from '@shared/lib';
 import { UserData } from './types';
-import axios from 'axios';
 import { History } from 'history';
+import axios from 'axios';
 
 export const LoginUser =
   (history: History): AppThunk =>

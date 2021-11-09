@@ -33,7 +33,7 @@ export const Select: React.FC<Props & ButtonProps> = ({
   );
 };
 
-const Button = styled(UIButton)<ButtonProps>(({ theme }) => ({
+const Button = styled(UIButton)<ButtonProps>(() => ({
   backgroundColor: 'var(--color-warning)',
   borderRadius: 5,
   display: 'flex',

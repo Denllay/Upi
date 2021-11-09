@@ -7,3 +7,5 @@ declare type AppThunk<ReturnType = void> = import('redux-thunk').ThunkAction<
   unknown,
   import('redux').AnyAction
 >;
+
+declare type AppDispatch = typeof import('./index').store.dispatch;

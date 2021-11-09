@@ -1,11 +1,11 @@
 import React from 'react';
 import { Box, capitalize, Typography } from '@mui/material';
 import { searchCategoryConfig } from '../config';
-import { useSearch } from '@features/search/model';
+import { searchModel } from '@features/search';
 import styles from './styles.module.scss';
 
 export const CategoryList = () => {
-  const { changeType } = useSearch();
+  const { changeType } = searchModel.useSearch();
 
   const categoryListEl = searchCategoryConfig.map((type) => {
     const name = capitalize(type);
