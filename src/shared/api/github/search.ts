@@ -1,21 +1,13 @@
 import { githubApi } from './github';
-import { SearchOnCacheEntryAdded, SearchParams } from './models';
-import { searchEntryAdded } from './SearchEntryAdded';
+import { SearchParams } from './models';
 
-const onCacheEntryAdded: SearchOnCacheEntryAdded = async (_, { cacheDataLoaded, dispatch }) => {
-  const { data } = await cacheDataLoaded;
-
-  searchEntryAdded.onCacheEntryAdded(data.total_count, dispatch);
-};
-
-export const userApiSlice = githubApi.injectEndpoints({
+export const searchApi = githubApi.injectEndpoints({
   endpoints: (builder) => ({
     searchRepositories: builder.query<any, SearchParams>({
       query: (params) => ({
         url: 'search/repositories',
         params,
       }),
-      onCacheEntryAdded,
     }),
 
     searchCode: builder.query<any, SearchParams>({
@@ -23,8 +15,6 @@ export const userApiSlice = githubApi.injectEndpoints({
         url: 'search/code',
         params,
       }),
-
-      onCacheEntryAdded,
     }),
 
     searchCommits: builder.query<any, SearchParams>({
@@ -32,7 +22,6 @@ export const userApiSlice = githubApi.injectEndpoints({
         url: 'search/commits',
         params,
       }),
-      onCacheEntryAdded,
     }),
 
     searchUsers: builder.query<any, SearchParams>({
@@ -40,9 +29,8 @@ export const userApiSlice = githubApi.injectEndpoints({
         url: 'search/users',
         params,
       }),
-      onCacheEntryAdded,
     }),
   }),
 });
 
-export const { useSearchRepositoriesQuery, useSearchCodeQuery, useSearchCommitsQuery, useSearchUsersQuery } = userApiSlice;
+export const { useSearchRepositoriesQuery, useSearchCodeQuery, useSearchCommitsQuery, useSearchUsersQuery } = searchApi;

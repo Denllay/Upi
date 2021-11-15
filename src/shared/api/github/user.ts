@@ -1,7 +1,7 @@
 import { githubApi } from './github';
 import { GetAllUserRepos, Repo, UserData } from './models';
 
-export const userApiSlice = githubApi.injectEndpoints({
+export const userApi = githubApi.injectEndpoints({
   endpoints: (builder) => ({
     getUserData: builder.query<UserData, string | null | void>({
       query: (username) => {
@@ -25,4 +25,4 @@ export const userApiSlice = githubApi.injectEndpoints({
   }),
 });
 
-export const { useGetUserDataQuery, useGetAllUserReposQuery } = userApiSlice;
+export const { useGetUserDataQuery, useGetAllUserReposQuery } = userApi;

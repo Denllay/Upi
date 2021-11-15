@@ -13,7 +13,7 @@ import {
   RepoFileContents,
 } from './models';
 
-export const repoApiSlice = githubApi.injectEndpoints({
+export const repoApi = githubApi.injectEndpoints({
   endpoints: (builder) => ({
     getRepo: builder.query<Repo, GetRepo>({
       query: ({ username, repository }) => `repos/${username}/${repository}`,
@@ -65,4 +65,4 @@ export const {
   useGetAllRepoBranchesQuery,
   useGetLastCommitQuery,
   useGetRepoContentsQuery,
-} = repoApiSlice;
+} = repoApi;
