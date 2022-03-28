@@ -1,5 +1,5 @@
 export const getPathUrl = (str: string) => {
-  const regex = /(http[s]?:\/\/)?([^\/\s]+\/)(.*)/;
+    const regex = /(http[s]?:\/\/)?([^\/\s]+\/)(.*)/;
 
-  return str.match(regex);
+    return str.match(regex);
 };

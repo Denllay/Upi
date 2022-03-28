@@ -1,3 +1,3 @@
-export { UpdateUserDetails, SignOutUser, reducer as ViewerReducer } from './slice';
-export { useViewer } from './selectors';
 export { initialize } from './actions';
+export { useViewer } from './selectors';
+export { SignOutUser, UpdateUserDetails, reducer as ViewerReducer } from './slice';

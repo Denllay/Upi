@@ -3,8 +3,8 @@ import { Route } from 'react-router-dom';
 import { QueryParamProvider } from 'use-query-params';
 
 export const withQueryParam = (Component: React.FC) => () =>
-  (
-    <QueryParamProvider ReactRouterRoute={Route}>
-      <Component />
-    </QueryParamProvider>
-  );
+    (
+        <QueryParamProvider ReactRouterRoute={Route}>
+            <Component />
+        </QueryParamProvider>
+    );

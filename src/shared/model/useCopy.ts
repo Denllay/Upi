@@ -1,18 +1,18 @@
 import { useState } from 'react';
 
 export const useCopy = () => {
-  const [isCopy, setCopy] = useState(false);
+    const [isCopy, setCopy] = useState(false);
 
-  const copyData = (data: string) => {
-    if (data) {
-      navigator.clipboard.writeText(data);
-      setCopy(true);
-    }
-  };
+    const copyData = (data: string) => {
+        if (data) {
+            navigator.clipboard.writeText(data);
+            setCopy(true);
+        }
+    };
 
-  const handleClose = () => {
-    setCopy(false);
-  };
+    const handleClose = () => {
+        setCopy(false);
+    };
 
-  return { isCopy, copyData, handleClose };
+    return { isCopy, copyData, handleClose };
 };

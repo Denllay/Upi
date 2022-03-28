@@ -1,34 +1,34 @@
-import { useEffect, useRef, useState, SyntheticEvent } from 'react';
+import { SyntheticEvent, useEffect, useRef, useState } from 'react';
 
 export const usePopper = <T = HTMLElement>() => {
-  const [isOpen, setOpen] = useState(false);
-  const anchorEl = useRef<T>(null);
+    const [isOpen, setOpen] = useState(false);
+    const anchorEl = useRef<T>(null);
 
-  useEffect(() => {
-    const closePopper = () => setOpen(false);
-    window.addEventListener('click', closePopper);
-    return () => {
-      window.removeEventListener('click', closePopper);
+    useEffect(() => {
+        const closePopper = () => setOpen(false);
+        window.addEventListener('click', closePopper);
+        return () => {
+            window.removeEventListener('click', closePopper);
+        };
+    }, []);
+
+    const togglePopper = (e: SyntheticEvent) => {
+        e.stopPropagation();
+
+        setOpen((prev) => !prev);
     };
-  }, []);
 
-  const togglePopper = (e: SyntheticEvent) => {
-    e.stopPropagation();
+    const openPopper = (e: SyntheticEvent) => {
+        e.stopPropagation();
 
-    setOpen((prev) => !prev);
-  };
+        setOpen(true);
+    };
 
-  const openPopper = (e: SyntheticEvent) => {
-    e.stopPropagation();
+    const closePopper = (e: SyntheticEvent) => {
+        e.stopPropagation();
 
-    setOpen(true);
-  };
+        setOpen(false);
+    };
 
-  const closePopper = (e: SyntheticEvent) => {
-    e.stopPropagation();
-
-    setOpen(false);
-  };
-
-  return { isOpen, togglePopper, openPopper, closePopper, anchorEl };
+    return { isOpen, togglePopper, openPopper, closePopper, anchorEl };
 };
