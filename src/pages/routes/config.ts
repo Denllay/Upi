@@ -3,7 +3,7 @@ import { lazy } from 'react';
 import { RoutesConfig } from './types';
 
 const NotFound = lazy(() => import('../notFound'));
-const Search = lazy(() => import('../search'));
+
 const Home = lazy(() => import('../home'));
 const Login = lazy(() => import('../auth/login'));
 const User = lazy(() => import('../user'));
@@ -33,13 +33,7 @@ export const routesConfig: RoutesConfig[] = [
     key: 'notFound',
     path: '/404',
   },
-  {
-    component: Search,
-    exact: false,
-    isGlobal: true,
-    key: 'search',
-    path: '/search',
-  },
+
   {
     component: Repository,
     exact: false,

@@ -1,7 +1,6 @@
 import React from 'react';
 import { HeaderAvatarButton } from '@entities/user/header';
 import { SignOutButton } from '@features/auth/signOut';
-import { SearchScopes } from '@features/search';
 import { Box, Typography } from '@mui/material';
 import styles from './styles.module.scss';
 import AvatarIcon from '../assets/icons/avatar.svg';
@@ -13,8 +12,6 @@ export const Header = () => {
 
   return (
     <Box className={styles.main}>
-      <SearchScopes />
-
       {isAuth && (
         <HeaderAvatarButton>
           <Box className={styles.popper_item}>
