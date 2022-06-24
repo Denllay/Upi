@@ -14,3 +14,7 @@
 ![image](https://user-images.githubusercontent.com/75447714/175515292-d90f5247-aff4-438a-a91a-2679d3c2caec.png)
 
 
+## How to start
+
+- yarn 
+- yarn start
